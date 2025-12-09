@@ -534,18 +534,13 @@ nav {
     height: 100%;
 }
 
-/* Dashboard Hover Effect */
+/* Dashboard Stats - Always Visible */
 .stats-row,
 .chart-mock {
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.4s ease;
-}
-
-.bento-card:hover .stats-row,
-.bento-card:hover .chart-mock {
     opacity: 1;
-    transform: translateY(0);
+    /* Always visible */
+    transform: none;
+    /* No movement */
 }
 
 .sidebar-mock {
@@ -891,6 +886,36 @@ footer {
 
 /* Mobile Optimization */
 @media (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+        /* Force cut off overflow */
+        position: relative;
+    }
+
+    /* Global Container Fix */
+    .container {
+        width: 100%;
+        padding: 0 20px;
+        /* Standardize padding */
+        box-sizing: border-box;
+        /* Include padding in width */
+    }
+
+    /* Prevent Bento Grid Overflow */
+    .bento-grid {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .bento-card {
+        width: 100%;
+        /* Ensure it fits */
+        box-sizing: border-box;
+    }
 
     /* Global Container Fix */
     .container {
