@@ -124,8 +124,9 @@ nav {
 
 .grid-3 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Decrease min-width to allow 4 grid on mid-size */
+    gap: 2rem;
 }
 
 
@@ -133,6 +134,8 @@ nav {
     padding: 3rem;
     transition: var(--transition-normal);
     background: var(--color-bg-subtle);
+    /* Semantic Background */
+    border: 1px solid var(--color-border-subtle);
     /* Semantic Background */
     border: 1px solid var(--color-border-subtle);
     /* Semantic Border */
@@ -143,11 +146,23 @@ nav {
     /* Add shadow for lift */
 }
 
+/* Light Mode Card Contrast */
+@media (prefers-color-scheme: light) {
+    .card {
+        background: #F8F9FA;
+        /* Subtle Gray as requested */
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        /* Even subtler border */
+    }
+}
+
 .card:hover {
     transform: translateY(-5px);
     border-color: var(--color-accent-green);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     /* General hover shadow */
+    background: #fff;
+    /* Pop to white on hover */
 }
 
 .card::before {
