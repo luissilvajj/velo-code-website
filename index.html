@@ -107,158 +107,193 @@
                 </div>
             </div>
 
-            <!-- 2. Right: Tablet/Analytics (Spanish Dashboard) -->
+            <!-- 2. Right: Tablet/Analytics Dashboard (Spanish) -->
             <div class="hero-tablet glass-panel">
                 <div class="mockup-header">
                     <div class="dots"><span></span><span></span><span></span></div>
-                    <div class="bar">estadisticas.vista</div>
+                    <div class="bar">dashboard.analytics</div>
                 </div>
-                <div class="mockup-body dashboard-body" style="background: #f8fafc; padding: 0;">
-                    <!-- Horizontal Nav -->
-                    <div
-                        style="height: 30px; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; padding: 0 10px; gap: 10px;">
-                        <div style="width: 15px; height: 15px; background: #e2e8f0; border-radius: 4px;"></div>
-                        <div style="width: 60px; height: 6px; background: #cbd5e1; border-radius: 3px;"></div>
+                <div class="mockup-body"
+                    style="background: #f8fafc; padding: 12px; display: flex; flex-direction: column; gap: 12px;">
+
+                    <!-- Header con título -->
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="font-size: 1rem; font-weight: 700; color: #0f172a;">Panel Analítico</div>
+                        <div style="width: 24px; height: 24px; background: #e2e8f0; border-radius: 50%;"></div>
+                    </div>
+
+                    <!-- KPI Cards Superior -->
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
                         <div
-                            style="margin-left: auto; width: 20px; height: 20px; background: #e2e8f0; border-radius: 50%;">
+                            style="background: linear-gradient(135deg, #3b82f6, #2563eb); padding: 10px; border-radius: 8px; color: white; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);">
+                            <div style="font-size: 0.55rem; opacity: 0.9; font-weight: 500; margin-bottom: 2px;">Ventas
+                            </div>
+                            <div style="font-size: 1.1rem; font-weight: 800; letter-spacing: -0.5px;">$24.5k</div>
+                            <div style="font-size: 0.5rem; opacity: 0.8; margin-top: 2px;">↑ 12%</div>
+                        </div>
+                        <div style="background: white; padding: 10px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                            <div style="font-size: 0.55rem; color: #64748b; font-weight: 500; margin-bottom: 2px;">
+                                Usuarios</div>
+                            <div style="font-size: 1.1rem; font-weight: 800; color: #0f172a; letter-spacing: -0.5px;">
+                                8,432</div>
+                            <div style="font-size: 0.5rem; color: #22c55e; margin-top: 2px;">↑ 5%</div>
+                        </div>
+                        <div style="background: white; padding: 10px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                            <div style="font-size: 0.55rem; color: #64748b; font-weight: 500; margin-bottom: 2px;">Tasa
+                                Conv.</div>
+                            <div style="font-size: 1.1rem; font-weight: 800; color: #0f172a; letter-spacing: -0.5px;">
+                                3.8%</div>
+                            <div style="font-size: 0.5rem; color: #22c55e; margin-top: 2px;">↑ 0.4%</div>
                         </div>
                     </div>
-                    <!-- Tablet Content Grid -->
+
+                    <!-- Gráfico de Barras Principal - MEJORADO -->
                     <div
-                        style="padding: 10px; display: grid; grid-template-columns: 80px 1fr; gap: 10px; height: 100%;">
-                        <!-- Tablet Sidebar -->
-                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                        style="flex: 1; background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; min-height: 100px;">
+                        <div style="font-size: 0.65rem; font-weight: 600; color: #334155; margin-bottom: 8px;">Ventas
+                            por Mes</div>
+
+                        <!-- Contenedor del gráfico con barras más visibles -->
+                        <div
+                            style="flex: 1; display: flex; align-items: flex-end; justify-content: space-between; gap: 5px; padding: 8px 4px; background: #fafbfc; border-radius: 6px; min-height: 60px;">
                             <div
-                                style="height: 20px; background: #eff6ff; border-radius: 4px; border: 1px solid #dbeafe;">
+                                style="flex: 1; height: 35%; background: linear-gradient(180deg, #94a3b8, #cbd5e1); border-radius: 4px 4px 2px 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
                             </div>
-                            <div style="height: 8px; width: 60%; background: #e2e8f0; border-radius: 2px;"></div>
-                            <div style="height: 8px; width: 80%; background: #e2e8f0; border-radius: 2px;"></div>
                             <div
-                                style="height: 60px; background: white; border: 1px solid #e2e8f0; border-radius: 6px; margin-top: auto; display: flex; align-items: center; justify-content: center;">
-                                <div
-                                    style="width: 30px; height: 30px; border-radius: 50%; border: 3px solid #3b82f6; border-top-color: transparent;">
-                                </div>
+                                style="flex: 1; height: 50%; background: linear-gradient(180deg, #94a3b8, #cbd5e1); border-radius: 4px 4px 2px 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                            </div>
+                            <div
+                                style="flex: 1; height: 45%; background: linear-gradient(180deg, #94a3b8, #cbd5e1); border-radius: 4px 4px 2px 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                            </div>
+                            <div
+                                style="flex: 1; height: 70%; background: linear-gradient(180deg, #94a3b8, #cbd5e1); border-radius: 4px 4px 2px 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                            </div>
+                            <div
+                                style="flex: 1; height: 55%; background: linear-gradient(180deg, #94a3b8, #cbd5e1); border-radius: 4px 4px 2px 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                            </div>
+                            <div
+                                style="flex: 1; height: 92%; background: linear-gradient(180deg, #3b82f6, #2563eb); border-radius: 4px 4px 2px 2px; box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4); border: 1px solid #2563eb;">
+                            </div>
+                            <div
+                                style="flex: 1; height: 65%; background: linear-gradient(180deg, #94a3b8, #cbd5e1); border-radius: 4px 4px 2px 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
                             </div>
                         </div>
-                        <!-- Tablet Main -->
-                        <div style="display: flex; flex-direction: column; gap: 10px;">
-                            <div style="display: flex; gap: 10px;">
-                                <div
-                                    style="flex: 1; height: 50px; background: white; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px;">
-                                    <div style="font-size: 0.6rem; color: #64748b;">Visitas</div>
-                                    <div style="font-size: 0.9rem; font-weight: 700; color: #0f172a;">24.5k</div>
-                                </div>
-                                <div
-                                    style="flex: 1; height: 50px; background: white; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px;">
-                                    <div style="font-size: 0.6rem; color: #64748b;">Conversión</div>
-                                    <div style="font-size: 0.9rem; font-weight: 700; color: #0f172a;">3.2%</div>
-                                </div>
+
+                        <!-- Labels de meses -->
+                        <div
+                            style="display: flex; justify-content: space-between; margin-top: 6px; color: #64748b; font-size: 0.5rem; font-weight: 600; padding: 0 4px;">
+                            <span>E</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span>
+                        </div>
+                    </div>
+
+                    <!-- Indicadores inferior -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                        <div
+                            style="background: white; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px; display: flex; align-items: center; gap: 6px;">
+                            <div style="width: 6px; height: 6px; background: #22c55e; border-radius: 50%;"></div>
+                            <div style="flex: 1;">
+                                <div style="font-size: 0.5rem; color: #64748b; font-weight: 600;">Activos</div>
+                                <div style="font-size: 0.75rem; font-weight: 800; color: #0f172a;">5,234</div>
                             </div>
-                            <div
-                                style="flex: 1; background: white; border: 1px solid #e2e8f0; border-radius: 6px; position: relative; overflow: hidden;">
-                                <div
-                                    style="position: absolute; bottom: 0; left: 0; right: 0; height: 60%; background: linear-gradient(180deg, transparent, #eff6ff);">
-                                </div>
-                                <div class="curve-line" style="border-color: #3b82f6;"></div>
+                        </div>
+                        <div
+                            style="background: white; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px; display: flex; align-items: center; gap: 6px;">
+                            <div style="width: 6px; height: 6px; background: #f59e0b; border-radius: 50%;"></div>
+                            <div style="flex: 1;">
+                                <div style="font-size: 0.5rem; color: #64748b; font-weight: 600;">Pendientes</div>
+                                <div style="font-size: 0.75rem; font-weight: 800; color: #0f172a;">892</div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
 
             <!-- 3. Center: Mobile App (iPhone Frame) -> INVENTORY DASHBOARD -->
             <div class="hero-mobile mobile-frame">
                 <div class="iphone-notch"></div>
-                <!-- Retina Scaling Container: Simulates 280x560px resolution -->
-                <div class="screen-content" style="background: #f8fafc; overflow: hidden; position: relative;">
+                <!-- Compact iPhone UI -->
+                <div class="screen-content"
+                    style="background: #f8fafc; overflow: hidden; position: relative; display: flex; flex-direction: column;">
+
+                    <!-- Header -->
                     <div
-                        style="width: 200%; height: 200%; transform: scale(0.5); transform-origin: top left; display: flex; flex-direction: column;">
-
-                        <!-- Header -->
+                        style="padding: 10px 12px; background: white; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
+                        <div style="font-weight: 700; color: #0f172a; font-size: 0.75rem; letter-spacing: -0.2px;">
+                            Inventario</div>
                         <div
-                            style="padding: 24px 30px; background: white; border-bottom: 2px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
-                            <div style="font-weight: 800; color: #0f172a; font-size: 2rem; letter-spacing: -0.5px;">
-                                Inventario</div>
+                            style="width: 22px; height: 22px; background: #eff6ff; border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+                            <ion-icon name="scan-outline" style="color: #3b82f6; font-size: 0.75rem;"></ion-icon>
+                        </div>
+                    </div>
+
+                    <!-- Stats Row -->
+                    <div style="padding: 10px 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                        <div
+                            style="background: linear-gradient(135deg, #3b82f6, #2563eb); padding: 8px; border-radius: 8px; color: white; box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);">
+                            <div style="font-size: 0.45rem; opacity: 0.9; margin-bottom: 2px; font-weight: 500;">Total
+                                Items</div>
+                            <div style="font-size: 1rem; font-weight: 800; letter-spacing: -0.3px;">1,240</div>
+                        </div>
+                        <div
+                            style="background: white; padding: 8px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
+                            <div style="font-size: 0.45rem; color: #64748b; margin-bottom: 2px; font-weight: 500;">Valor
+                                Stock</div>
+                            <div style="font-size: 1rem; font-weight: 800; color: #0f172a; letter-spacing: -0.3px;">$45k
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chart Section -->
+                    <div style="padding: 0 12px 12px; display: flex; flex-direction: column; gap: 8px; flex: 1;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="font-size: 0.6rem; font-weight: 700; color: #334155;">Resumen Mensual</div>
+                            <div style="font-size: 0.45rem; color: #3b82f6; font-weight: 600;">Ver todo</div>
+                        </div>
+
+                        <!-- Main Chart -->
+                        <div
+                            style="flex: 1; background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 10px; display: flex; flex-direction: column; box-shadow: 0 2px 6px rgba(0,0,0,0.03); min-height: 80px;">
+                            <!-- Bars -->
                             <div
-                                style="width: 48px; height: 48px; background: #eff6ff; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                                <ion-icon name="scan-outline" style="color: #3b82f6; font-size: 1.8rem;"></ion-icon>
+                                style="display: flex; align-items: flex-end; justify-content: space-between; flex: 1; gap: 4px; padding-bottom: 6px; border-bottom: 1px solid #f1f5f9;">
+                                <div style="width: 10px; height: 40%; background: #e2e8f0; border-radius: 3px;"></div>
+                                <div style="width: 10px; height: 65%; background: #e2e8f0; border-radius: 3px;"></div>
+                                <div style="width: 10px; height: 35%; background: #e2e8f0; border-radius: 3px;"></div>
+                                <div
+                                    style="width: 10px; height: 85%; background: #3b82f6; border-radius: 3px; box-shadow: 0 1px 4px rgba(59, 130, 246, 0.4);">
+                                </div>
+                                <div style="width: 10px; height: 55%; background: #e2e8f0; border-radius: 3px;"></div>
+                                <div style="width: 10px; height: 45%; background: #e2e8f0; border-radius: 3px;"></div>
+                            </div>
+                            <!-- Labels -->
+                            <div
+                                style="display: flex; justify-content: space-between; margin-top: 4px; color: #94a3b8; font-size: 0.4rem; font-weight: 500;">
+                                <span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span>
                             </div>
                         </div>
 
-                        <!-- Stats Row -->
-                        <div style="padding: 24px 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <!-- KPIs Footer -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
                             <div
-                                style="background: linear-gradient(135deg, #3b82f6, #2563eb); padding: 20px; border-radius: 20px; color: white; box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);">
-                                <div style="font-size: 1rem; opacity: 0.9; margin-bottom: 8px; font-weight: 500;">Total
-                                    Items</div>
-                                <div style="font-size: 2.2rem; font-weight: 800; letter-spacing: -1px;">1,240</div>
-                            </div>
-                            <div
-                                style="background: white; padding: 20px; border-radius: 20px; border: 2px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-                                <div style="font-size: 1rem; color: #64748b; margin-bottom: 8px; font-weight: 500;">
-                                    Valor Stock</div>
-                                <div style="font-size: 2.2rem; font-weight: 800; color: #0f172a; letter-spacing: -1px;">
-                                    $45k</div>
-                            </div>
-                        </div>
-
-                        <!-- Chart Section (Expanded) -->
-                        <div style="padding: 0 30px 30px; display: flex; flex-direction: column; gap: 20px; flex: 1;">
-                            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-                                <div style="font-size: 1.4rem; font-weight: 700; color: #334155;">Resumen Mensual</div>
-                                <div style="font-size: 0.9rem; color: #3b82f6; font-weight: 600;">Ver todo</div>
-                            </div>
-
-                            <!-- Main Chart -->
-                            <div
-                                style="flex: 1; background: white; border: 2px solid #e2e8f0; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
-                                <!-- Bars -->
-                                <div
-                                    style="display: flex; align-items: flex-end; justify-content: space-between; flex: 1; gap: 12px; padding-bottom: 15px; border-bottom: 2px solid #f1f5f9;">
-                                    <div style="width: 24px; height: 40%; background: #e2e8f0; border-radius: 6px;">
-                                    </div>
-                                    <div style="width: 24px; height: 65%; background: #e2e8f0; border-radius: 6px;">
-                                    </div>
-                                    <div style="width: 24px; height: 35%; background: #e2e8f0; border-radius: 6px;">
-                                    </div>
-                                    <div
-                                        style="width: 24px; height: 85%; background: #3b82f6; border-radius: 6px; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);">
-                                    </div>
-                                    <div style="width: 24px; height: 55%; background: #e2e8f0; border-radius: 6px;">
-                                    </div>
-                                    <div style="width: 24px; height: 45%; background: #e2e8f0; border-radius: 6px;">
-                                    </div>
-                                </div>
-                                <!-- Labels -->
-                                <div
-                                    style="display: flex; justify-content: space-between; margin-top: 8px; color: #94a3b8; font-size: 1rem; font-weight: 500; padding: 0 4px;">
-                                    <span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span>
+                                style="background: white; border: 1px solid #e2e8f0; border-radius: 6px; padding: 6px; display: flex; align-items: center; gap: 5px;">
+                                <div style="width: 6px; height: 6px; background: #22c55e; border-radius: 50%;"></div>
+                                <div>
+                                    <div style="font-size: 0.4rem; color: #64748b; font-weight: 600;">Entradas</div>
+                                    <div style="font-size: 0.6rem; font-weight: 800; color: #0f172a;">+840</div>
                                 </div>
                             </div>
-
-                            <!-- KPIs Footer -->
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                                <div
-                                    style="background: white; border: 2px solid #e2e8f0; border-radius: 16px; padding: 15px; display: flex; align-items: center; gap: 12px;">
-                                    <div style="width: 12px; height: 12px; background: #22c55e; border-radius: 50%;">
-                                    </div>
-                                    <div>
-                                        <div style="font-size: 0.8rem; color: #64748b; font-weight: 600;">Entradas</div>
-                                        <div style="font-size: 1.2rem; font-weight: 800; color: #0f172a;">+840</div>
-                                    </div>
-                                </div>
-                                <div
-                                    style="background: white; border: 2px solid #e2e8f0; border-radius: 16px; padding: 15px; display: flex; align-items: center; gap: 12px;">
-                                    <div style="width: 12px; height: 12px; background: #ef4444; border-radius: 50%;">
-                                    </div>
-                                    <div>
-                                        <div style="font-size: 0.8rem; color: #64748b; font-weight: 600;">Salidas</div>
-                                        <div style="font-size: 1.2rem; font-weight: 800; color: #0f172a;">-120</div>
-                                    </div>
+                            <div
+                                style="background: white; border: 1px solid #e2e8f0; border-radius: 6px; padding: 6px; display: flex; align-items: center; gap: 5px;">
+                                <div style="width: 6px; height: 6px; background: #ef4444; border-radius: 50%;"></div>
+                                <div>
+                                    <div style="font-size: 0.4rem; color: #64748b; font-weight: 600;">Salidas</div>
+                                    <div style="font-size: 0.6rem; font-weight: 800; color: #0f172a;">-120</div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <div class="home-indicator"></div>
             </div>
