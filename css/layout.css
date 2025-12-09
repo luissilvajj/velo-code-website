@@ -189,147 +189,141 @@ nav {
 /* Hero Admin Mockup Styles */
 .hero-stat-card {
     background: white;
-    height: 40px;
-    border-radius: 6px;
+    height: 60px;
+    /* Taller */
+    border-radius: 8px;
     flex: 1;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-stat-card::after {
-    content: '';
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    width: 60%;
-    height: 4px;
-    background: #e2e8f0;
-    border-radius: 2px;
-}
-
-.hero-table-mock {
-    flex: 1;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    padding: 10px;
+    padding: 8px 12px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    justify-content: center;
 }
 
-.table-header {
-    height: 8px;
-    width: 100%;
+.hero-stat-card .label {
+    font-size: 0.7rem;
+    color: #94a3b8;
+}
+
+.hero-stat-card .value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.header-search {
     background: #f1f5f9;
+    padding: 4px 10px;
     border-radius: 4px;
-    margin-bottom: 4px;
-}
-
-.table-row {
     display: flex;
-    gap: 8px;
     align-items: center;
+    gap: 6px;
+    font-size: 0.7rem;
+    color: #94a3b8;
+    margin-left: 20px;
+    width: 120px;
 }
 
-.t-col-1 {
+.sidebar-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    cursor: default;
+}
+
+.sidebar-icon.active {
+    background: #eff6ff;
+    color: #3b82f6;
+}
+
+/* Detailed Table Styles */
+.t-col-avatar {
     width: 24px;
     height: 24px;
+    background: #cbd5e1;
+    border-radius: 50%;
+}
+
+.t-col-text {
+    flex: 1;
+    height: 8px;
     background: #e2e8f0;
     border-radius: 4px;
+    margin: 0 10px;
 }
 
-.t-col-2 {
-    flex: 1;
-    height: 6px;
-    background: #f1f5f9;
-    border-radius: 2px;
-}
-
-.t-col-3 {
-    width: 40px;
-    height: 12px;
-    background: #dbeafe;
-    border-radius: 10px;
-}
-
-/* Badge */
-
-/* Hero Mobile Analytics Styles */
-.hero-mobile-card {
-    background: #1e293b;
-    /* Dark card */
-    border-radius: 16px;
-    padding: 15px;
-    color: white;
-    margin-bottom: 15px;
-    position: relative;
-    overflow: hidden;
-}
-
-.mini-title {
+.t-col-badge {
+    padding: 2px 8px;
+    border-radius: 12px;
     font-size: 0.6rem;
-    color: #94a3b8;
-    margin-bottom: 4px;
+    font-weight: 600;
 }
 
-.mini-amount {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
+.t-col-badge.success {
+    background: #dcfce7;
+    color: #166534;
 }
 
-.mini-graph {
-    height: 30px;
-    width: 100%;
-    position: relative;
+.t-col-badge.pending {
+    background: #fef9c3;
+    color: #854d0e;
 }
 
-.curve-line {
-    width: 100%;
-    height: 100%;
-    border-bottom: 3px solid #38bdf8;
-    border-radius: 0 0 50% 0 / 0 0 100% 0;
-    /* Simple curve simulation */
-    opacity: 0.8;
-}
-
-.hero-list-gap {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
+/* Mobile List & Nav */
 .hero-list-item {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 8px;
-    background: #f8fafc;
-    border-radius: 8px;
+    padding: 10px 15px;
+    background: transparent;
+    border-bottom: 1px solid #f1f5f9;
 }
 
-.icon-box {
-    width: 32px;
-    height: 32px;
-    background: #fed7aa;
-    /* Orange tint */
-    border-radius: 8px;
-}
-
-.text-lines {
-    flex: 1;
+.hero-list-item .text-lines {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 2px;
 }
 
-.text-lines span {
-    height: 6px;
-    background: #e2e8f0;
-    border-radius: 3px;
-    display: block;
+.hero-list-item .t-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+.hero-list-item .t-date {
+    font-size: 0.7rem;
+    color: #94a3b8;
+}
+
+.hero-list-item .t-price {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #1e293b;
+    margin-left: auto;
+}
+
+.hero-list-item .t-price.success {
+    color: #166534;
+}
+
+.bottom-nav-bar {
+    margin-top: auto;
+    border-top: 1px solid #f1f5f9;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    color: #94a3b8;
+    font-size: 1.5rem;
+}
+
+.bottom-nav-bar .active {
+    color: #3b82f6;
 }
 
 /* Adjust reuse of classes */

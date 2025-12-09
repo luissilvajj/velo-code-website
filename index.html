@@ -48,32 +48,54 @@
             <div class="hero-desktop glass-panel">
                 <div class="mockup-header">
                     <div class="dots"><span></span><span></span><span></span></div>
-                    <div class="bar">admin.velo.system</div>
+                    <div class="header-search">
+                        <ion-icon name="search-outline"></ion-icon>
+                        <span>Search...</span>
+                    </div>
+                    <div class="header-profile"></div>
                 </div>
                 <div class="mockup-body dashboard-body" style="background: #f8fafc;">
-                    <div class="sidebar-mock" style="width: 50px; border-right: 1px solid #e2e8f0;">
-                        <div class="sidebar-item active"></div>
-                        <div class="sidebar-item"></div>
-                        <div class="sidebar-item"></div>
+                    <div class="sidebar-mock"
+                        style="width: 60px; border-right: 1px solid #e2e8f0; display: flex; flex-direction: column; align-items: center; padding-top: 15px; gap: 15px;">
+                        <div class="sidebar-icon active"><ion-icon name="grid-outline"></ion-icon></div>
+                        <div class="sidebar-icon"><ion-icon name="people-outline"></ion-icon></div>
+                        <div class="sidebar-icon"><ion-icon name="cart-outline"></ion-icon></div>
+                        <div class="sidebar-icon"><ion-icon name="settings-outline"></ion-icon></div>
+                        <div class="sidebar-icon" style="margin-top: auto; margin-bottom: 15px;"><ion-icon
+                                name="log-out-outline"></ion-icon></div>
                     </div>
-                    <div class="content-mock" style="padding: 15px; display: flex; flex-direction: column; gap: 10px;">
-                        <div style="display: flex; gap: 10px;">
-                            <div class="hero-stat-card"></div>
-                            <div class="hero-stat-card"></div>
+                    <div class="content-mock"
+                        style="padding: 20px; display: flex; flex-direction: column; gap: 15px; flex: 1;">
+                        <div style="display: flex; gap: 15px;">
+                            <div class="hero-stat-card">
+                                <span class="label">Revenue</span>
+                                <span class="value">$12.4k</span>
+                            </div>
+                            <div class="hero-stat-card">
+                                <span class="label">Users</span>
+                                <span class="value">843</span>
+                            </div>
                         </div>
                         <div class="hero-table-mock">
-                            <div class="table-header"></div>
-                            <div class="table-row">
-                                <div class="t-col-1"></div>
-                                <div class="t-col-2"></div>
+                            <div class="table-header"
+                                style="height: auto; padding-bottom: 5px; margin-bottom: 5px; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between;">
+                                <span class="table-title">Recent Orders</span>
+                                <ion-icon name="filter-outline" style="color: #94a3b8;"></ion-icon>
                             </div>
                             <div class="table-row">
-                                <div class="t-col-1"></div>
-                                <div class="t-col-2"></div>
+                                <div class="t-col-avatar"></div>
+                                <div class="t-col-text"></div>
+                                <div class="t-col-badge success">Paid</div>
                             </div>
                             <div class="table-row">
-                                <div class="t-col-1"></div>
-                                <div class="t-col-2"></div>
+                                <div class="t-col-avatar"></div>
+                                <div class="t-col-text"></div>
+                                <div class="t-col-badge pending">Pending</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="t-col-avatar"></div>
+                                <div class="t-col-text"></div>
+                                <div class="t-col-badge success">Paid</div>
                             </div>
                         </div>
                     </div>
@@ -96,22 +118,47 @@
             <div class="hero-mobile mobile-frame">
                 <div class="iphone-notch"></div>
                 <div class="screen-content" style="background: #fff; display: flex; flex-direction: column;">
-                    <div class="app-header" style="margin-bottom: 10px;">
-                        <div class="menu-icon"></div>
-                        <div class="profile-icon"></div>
+                    <div class="app-header"
+                        style="margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
+                        <ion-icon name="menu-outline" style="font-size: 1.2rem; margin-left:12px;"></ion-icon>
+                        <div class="profile-icon"
+                            style="width: 24px; height: 24px; background: #cbd5e1; border-radius: 50%; margin-right: 12px;">
+                        </div>
                     </div>
+
                     <div class="hero-mobile-card">
-                        <div class="mini-title">Total Revenue</div>
-                        <div class="mini-amount">$42,500</div>
+                        <div class="mini-title">Total Balance</div>
+                        <div class="mini-amount">$42,500.00</div>
                         <div class="mini-graph">
                             <div class="curve-line"></div>
                         </div>
                     </div>
-                    <div class="hero-list-gap">
+
+                    <div class="hero-list-gap" style="flex: 1; overflow: hidden;">
+                        <div class="hero-list-title" style="margin: 0 15px 5px; font-weight: 600; font-size: 0.8rem;">
+                            Transactions</div>
                         <div class="hero-list-item">
-                            <div class="icon-box"></div>
-                            <div class="text-lines"><span style="width: 60%"></span><span style="width: 40%"></span>
+                            <div class="icon-box"><ion-icon name="logo-apple"></ion-icon></div>
+                            <div class="text-lines">
+                                <span class="t-name">Apple Store</span>
+                                <span class="t-date">Today</span>
                             </div>
+                            <span class="t-price">-$120</span>
+                        </div>
+                        <div class="hero-list-item">
+                            <div class="icon-box" style="background: #e0f2fe; color: #0284c7;"><ion-icon
+                                    name="arrow-down-outline"></ion-icon></div>
+                            <div class="text-lines">
+                                <span class="t-name">Transfer</span>
+                                <span class="t-date">Yesterday</span>
+                            </div>
+                            <span class="t-price success">+$850</span>
+                        </div>
+                        <div class="bottom-nav-bar">
+                            <ion-icon name="home" class="active"></ion-icon>
+                            <ion-icon name="wallet-outline"></ion-icon>
+                            <ion-icon name="pie-chart-outline"></ion-icon>
+                            <ion-icon name="person-outline"></ion-icon>
                         </div>
                     </div>
                 </div>
