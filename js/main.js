@@ -76,4 +76,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         observer.observe(processSection);
     }
+    // --- WHATSAPP FORM SUBMISSION ---
+    const contactForms = document.querySelectorAll('form, .contact-form'); // Target all forms
+    contactForms.forEach(form => {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Get inputs
+            const inputs = form.querySelectorAll('input, textarea, select');
+            let messageBody = "Hola Velo Code, me gustaría iniciar un proyecto:%0A";
+
+            // Build message
+            inputs.forEach(input => {
+                if (input.value) {
+                    // Check if it's the message area
+                    const label = input.getAttribute('placeholder') || input.name || "Detalle";
+                    messageBody += `%0A*${label}:* ${input.value}`;
+                }
+            });
+
+            // Redirect to WhatsApp (Replace number with actual)
+            const phoneNumber = "584120534267"; // Placeholder
+            window.open(`https://wa.me/${phoneNumber}?text=${messageBody}`, '_blank');
+        });
+    });
 });
