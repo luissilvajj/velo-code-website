@@ -84,13 +84,16 @@ nav {
     }
 }
 
-/* Hero Visual Container */
+/* Hero Visual Container - Expanded */
 .hero-visual {
     position: relative;
-    width: 500px;
-    height: 400px;
+    width: 100%;
+    max-width: 800px;
+    /* Much wider for 3 items */
+    height: 500px;
+    /* Taller */
     display: none;
-    /* Hidden on small mobile initially or scaled */
+    margin: 0 auto;
     perspective: 1000px;
     z-index: 1;
 }
@@ -98,40 +101,87 @@ nav {
 @media (min-width: 900px) {
     .hero-visual {
         display: block;
-        margin: 0 auto;
-        /* Center the visual container */
     }
 }
 
-/* Desktop Mockup in Hero */
+/* 1. Desktop Mockup (Left Back) */
 .hero-desktop {
     position: absolute;
-    top: 20px;
+    top: 40px;
     left: 0;
-    width: 400px;
-    height: 250px;
+    width: 480px;
+    /* Larger */
+    height: 320px;
+    /* Larger */
     background: var(--color-bg-subtle);
     border: 1px solid var(--color-border-subtle);
     border-radius: 12px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
     overflow: hidden;
-    transform: rotateY(-5deg) rotateX(5deg);
-    /* Slight 3D Tilt */
+    transform: rotateY(5deg) scale(0.95);
+    /* Tilted Inwards */
     transition: transform 0.5s ease;
+    z-index: 1;
 }
 
 .hero-desktop:hover {
     transform: rotateY(0) rotateX(0) scale(1.02);
 }
 
-/* Mobile Mockup in Hero */
+/* 2. Tablet Mockup (Right Back) */
+.hero-tablet {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 380px;
+    height: 260px;
+    background: white;
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transform: rotateY(-5deg) scale(0.95);
+    /* Tilted Inwards */
+    z-index: 1;
+}
+
+.hero-tablet .mockup-header {
+    background: #f8fafc;
+    padding: 8px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.big-graph-mock {
+    width: 80%;
+    height: 60%;
+    background: conic-gradient(from 180deg at 50% 50%, #3b82f6 0deg, #93c5fd 100deg, #e2e8f0 100deg, #e2e8f0 360deg);
+    border-radius: 50%;
+    position: relative;
+}
+
+.big-graph-mock::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+    background: white;
+    border-radius: 50%;
+}
+
+/* 3. Mobile Mockup (Center Front) */
 .hero-mobile {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
-    /* Reuse mobile frame styles but override positioning */
-    transform: rotateY(-5deg) rotateX(5deg) translateZ(50px);
-    box-shadow: -20px 20px 60px rgba(0, 0, 0, 0.3);
+    bottom: 0;
+    left: 50%;
+    margin-left: -80px;
+    /* Half of width approx to center */
+    /* Mobile frame base styles will apply, we just position */
+    transform: translateZ(50px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    /* Deep shadow */
     z-index: 10;
     animation: float 6s ease-in-out infinite;
 }
