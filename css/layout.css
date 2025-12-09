@@ -151,46 +151,10 @@ nav {
     border-bottom: 1px solid #e2e8f0;
 }
 
-.big-graph-mock {
-    width: 80%;
-    height: 60%;
-    background: conic-gradient(from 180deg at 50% 50%, #3b82f6 0deg, #93c5fd 100deg, #e2e8f0 100deg, #e2e8f0 360deg);
-    border-radius: 50%;
-    position: relative;
-}
-
-.big-graph-mock::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60%;
-    height: 60%;
-    background: white;
-    border-radius: 50%;
-}
-
-/* 3. Mobile Mockup (Center Front) */
-.hero-mobile {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    margin-left: -80px;
-    /* Half of width approx to center */
-    /* Mobile frame base styles will apply, we just position */
-    transform: translateZ(50px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-    /* Deep shadow */
-    z-index: 10;
-    animation: float 6s ease-in-out infinite;
-}
-
-/* Hero Admin Mockup Styles */
 .hero-stat-card {
-    background: white;
+    background: #f8fafc;
+    /* Changed from white to subtle gray */
     height: 60px;
-    /* Taller */
     border-radius: 8px;
     flex: 1;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
@@ -198,28 +162,36 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border: 1px solid #e2e8f0;
+    /* Added border */
 }
 
 .hero-stat-card .label {
     font-size: 0.7rem;
-    color: #94a3b8;
+    color: #64748b;
+    font-weight: 500;
 }
 
+/* Darker text */
 .hero-stat-card .value {
     font-size: 1.1rem;
     font-weight: 700;
-    color: #1e293b;
+    color: #0f172a;
 }
 
+/* Darker text */
+
 .header-search {
-    background: #f1f5f9;
+    background: #e2e8f0;
+    /* Darker bg */
     padding: 4px 10px;
     border-radius: 4px;
     display: flex;
     align-items: center;
     gap: 6px;
     font-size: 0.7rem;
-    color: #94a3b8;
+    color: #64748b;
+    /* Darker text */
     margin-left: 20px;
     width: 120px;
 }
@@ -230,38 +202,56 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #94a3b8;
+    color: #cbd5e1;
+    /* Base color */
     border-radius: 6px;
     font-size: 1.2rem;
     cursor: default;
 }
 
 .sidebar-icon.active {
-    background: #eff6ff;
-    color: #3b82f6;
+    background: #bfdbfe;
+    /* Stronger active bg */
+    color: #1d4ed8;
+    /* Stronger active icon */
 }
 
 /* Detailed Table Styles */
+.hero-table-mock {
+    flex: 1;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px solid #e2e8f0;
+    /* Added border */
+}
+
 .t-col-avatar {
     width: 24px;
     height: 24px;
-    background: #cbd5e1;
+    background: #94a3b8;
     border-radius: 50%;
 }
 
+/* Darker gray */
 .t-col-text {
     flex: 1;
     height: 8px;
-    background: #e2e8f0;
+    background: #cbd5e1;
     border-radius: 4px;
     margin: 0 10px;
 }
 
+/* Darker gray */
 .t-col-badge {
     padding: 2px 8px;
     border-radius: 12px;
     font-size: 0.6rem;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .t-col-badge.success {
