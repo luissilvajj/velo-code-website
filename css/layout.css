@@ -111,8 +111,8 @@ nav {
     left: 0;
     width: 520px;
     /* Increased to show full sidebar */
-    height: 320px;
-    /* Larger */
+    height: 360px;
+    /* Increased to show complete layout */
     background: var(--color-bg-subtle);
     border: 1px solid var(--color-border-subtle);
     border-radius: 12px;
@@ -155,7 +155,8 @@ nav {
     top: 80px;
     right: 0;
     width: 380px;
-    height: 260px;
+    height: 300px;
+    /* Increased to show complete dashboard */
     background: white;
     border: 1px solid var(--color-border-subtle);
     border-radius: 12px;
