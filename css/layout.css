@@ -171,9 +171,22 @@ nav {
     transform: translateY(-5px);
     border-color: var(--color-accent-green);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    /* General hover shadow */
-    background: #fff;
-    /* Pop to white on hover */
+}
+
+/* Light Mode Hover: Pop to White */
+@media (prefers-color-scheme: light) {
+    .card:hover {
+        background: #fff;
+    }
+}
+
+/* Dark Mode Hover: Stay Dark but lighter */
+@media (prefers-color-scheme: dark) {
+    .card:hover {
+        background: #2c2c2e;
+        /* Slightly lighter than base dark */
+        border-color: rgba(255, 255, 255, 0.2);
+    }
 }
 
 .card::before {
