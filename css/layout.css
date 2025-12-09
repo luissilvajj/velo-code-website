@@ -122,11 +122,22 @@ nav {
     font-size: 3rem;
 }
 
+/* Services Grid - 2x2 Layout */
 .grid-3 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    /* Decrease min-width to allow 4 grid on mid-size */
+    grid-template-columns: 1fr;
+    /* Mobile First: 1 column */
     gap: 2rem;
+    max-width: 900px;
+    /* Constrain width to keep 2x2 looking good */
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+        /* Desktop: 2 columns (2x2) */
+    }
 }
 
 
