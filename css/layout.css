@@ -121,19 +121,22 @@ nav {
 .card {
     padding: 3rem;
     transition: var(--transition-normal);
-    background: rgba(255, 255, 255, 0.02);
-    /* Very subtle glass */
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
+    background: var(--color-bg-subtle);
+    /* Semantic Background */
+    border: 1px solid var(--color-border-subtle);
+    /* Semantic Border */
+    border-radius: var(--radius-md);
     position: relative;
     overflow: hidden;
+    box-shadow: var(--glass-shadow);
+    /* Add shadow for lift */
 }
 
 .card:hover {
     transform: translateY(-5px);
     border-color: var(--color-accent-green);
-    /* Neon Green Outline on Hover */
-    box-shadow: 0 0 20px rgba(46, 204, 113, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    /* General hover shadow */
 }
 
 .card::before {
@@ -143,7 +146,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.05), transparent);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
     pointer-events: none;
 }
 
@@ -227,17 +230,19 @@ nav {
 .bento-card {
     background: var(--color-bg-subtle);
     border-radius: var(--radius-md);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--color-border-subtle);
     padding: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     transition: var(--transition-normal);
+    box-shadow: var(--glass-shadow);
 }
 
 .bento-card:hover {
     transform: translateY(-5px);
     border-color: var(--color-accent-blue);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .bento-info h3 {

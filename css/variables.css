@@ -2,63 +2,96 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-    /* Default: Light Mode (Apple Style) */
-    --color-bg-dark: #FFFFFF;
-    --color-bg-subtle: #F5F5F7;
+    /* === LIGHT MODE (Default) === */
+    /* Backgrounds */
+    --color-bg-dark: #F5F5F7;
+    /* Off-white body for contrast */
+    --color-bg-subtle: #FFFFFF;
+    /* Pure white for cards */
+    --color-surface-glass: rgba(255, 255, 255, 0.8);
+
+    /* Borders */
+    --color-border-subtle: rgba(0, 0, 0, 0.1);
+    --color-border-hover: rgba(0, 0, 0, 0.2);
 
     /* Text */
-    --color-white: #1D1D1F;
-    /* Inverted for Light Mode: Dark Text */
-    --color-text-secondary: #86868B;
+    --color-white: #000000;
+    /* Main text is Black */
+    --color-text-secondary: #515155;
+    /* Dark Gray for readability */
+    --color-text-inverse: #FFFFFF;
+    /* Text on dark buttons */
 
-    /* Accents */
-    --color-accent-blue: #007AFF;
-    --color-accent-violet: #AF52DE;
-    --color-accent-green: #34C759;
+    /* Accents (Darker for Light Mode visibility) */
+    --color-accent-blue: #0071E3;
+    --color-accent-violet: #8944AB;
+    --color-accent-green: #00C7BE;
+    /* Teal/Green that pops on white */
 
     /* Gradients */
-    --gradient-logo: linear-gradient(135deg, #007AFF, #AF52DE, #34C759);
-    --gradient-text: linear-gradient(90deg, #1D1D1F, #424245);
-    --gradient-glow: radial-gradient(circle, rgba(0, 122, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+    --gradient-logo: linear-gradient(135deg, #0071E3, #8944AB);
+    --gradient-text: linear-gradient(90deg, #1D1D1F, #434344);
+    --gradient-glow: radial-gradient(circle, rgba(0, 113, 227, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
 
     /* Other Tokens */
     --font-heading: 'Poppins', sans-serif;
     --font-body: 'Inter', sans-serif;
+
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
     --spacing-lg: 5rem;
     --spacing-xl: 10rem;
+
     --radius-sm: 8px;
     --radius-md: 16px;
     --radius-lg: 32px;
-    --glass-bg: rgba(255, 255, 255, 0.7);
-    --glass-border: 1px solid rgba(0, 0, 0, 0.05);
-    --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    /* Frosty white */
+    --glass-border: 1px solid rgba(0, 0, 0, 0.08);
+    --glass-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    /* Soft shadow */
+
     --transition-fast: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     --transition-normal: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Dark Mode Override (System Preference) */
+/* === DARK MODE (System Preference) === */
 @media (prefers-color-scheme: dark) {
     :root {
+        /* Backgrounds */
         --color-bg-dark: #000000;
-        --color-bg-subtle: #111111;
+        /* Pure Black Body */
+        --color-bg-subtle: #1c1c1e;
+        /* Dark Gray Cards */
+        --color-surface-glass: rgba(255, 255, 255, 0.08);
 
+        /* Borders */
+        --color-border-subtle: rgba(255, 255, 255, 0.15);
+        /* Stronger border */
+        --color-border-hover: rgba(255, 255, 255, 0.3);
+
+        /* Text */
         --color-white: #FFFFFF;
-        /* True White */
-        --color-text-secondary: #888888;
+        /* Main text is White */
+        --color-text-secondary: #A1A1A6;
+        /* Light Gray */
+        --color-text-inverse: #000000;
 
-        /* Neon Accents for Dark Mode */
-        --color-accent-green: #2ECC71;
-        --color-accent-blue: #3498DB;
-        --color-accent-violet: #8E44AD;
+        /* Accents (Neon for Dark Mode) */
+        --color-accent-green: #30D158;
+        --color-accent-blue: #0A84FF;
+        --color-accent-violet: #BF5AF2;
 
-        --gradient-text: linear-gradient(90deg, #FFFFFF, #999);
-        --gradient-glow: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
+        /* Gradients */
+        --gradient-text: linear-gradient(90deg, #FFFFFF, #B0B0B0);
+        --gradient-glow: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
 
-        --glass-bg: rgba(255, 255, 255, 0.03);
-        --glass-border: 1px solid rgba(255, 255, 255, 0.1);
-        --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+        --glass-bg: rgba(28, 28, 30, 0.6);
+        /* Translucent dark gray */
+        --glass-border: 1px solid rgba(255, 255, 255, 0.12);
+        --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        /* Deep shadow */
     }
 }
