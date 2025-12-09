@@ -29,4 +29,51 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', revealOnScroll);
     // Trigger once on load
     revealOnScroll();
+
+    // --- HERO EXPLODE EFFECT ---
+    const heroVisual = document.querySelector('.hero-visual');
+    if (heroVisual) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                heroVisual.classList.add('explode-away');
+            } else {
+                heroVisual.classList.remove('explode-away');
+            }
+        });
+    }
+
+    // --- PROCESS VISUAL ANIMATION ---
+    const processSection = document.querySelector('.process-section');
+    const processLineFill = document.querySelector('.process-line-fill');
+    const processNodes = document.querySelectorAll('.process-node');
+
+    if (processSection && processLineFill) {
+        let animationStarted = false;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animationStarted) {
+                    animationStarted = true;
+
+                    // Start Line Animation
+                    processLineFill.style.width = '100%';
+
+                    // Slower Sync Logic (Total 6000ms)
+                    // Node 0: IDEA (Start immediately)
+                    setTimeout(() => processNodes[0].classList.add('active'), 100);
+
+                    // Node 1: DISEÑO (approx 33% -> 2000ms)
+                    setTimeout(() => processNodes[1].classList.add('active'), 2000);
+
+                    // Node 2: CÓDIGO (approx 66% -> 4000ms)
+                    setTimeout(() => processNodes[2].classList.add('active'), 4000);
+
+                    // Node 3: LANZAMIENTO (100% -> 6000ms)
+                    setTimeout(() => processNodes[3].classList.add('active'), 6000);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(processSection);
+    }
 });

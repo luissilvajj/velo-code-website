@@ -330,6 +330,111 @@ nav {
     font-weight: 500;
 }
 
+/* Process Visual Component - JS Controlled */
+.process-visual {
+    padding: 3rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.process-track {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Connecting Line */
+.process-line {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    right: 40px;
+    height: 2px;
+    background: var(--color-border-subtle);
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.process-line-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--color-accent-blue), var(--color-accent-green));
+    /* Animation handled by JS for sync */
+    transition: width 6s linear;
+}
+
+.process-node {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0.3;
+    /* Dimmed state */
+    transform: scale(0.9);
+    transition: all 0.5s ease;
+}
+
+.process-node.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.p-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--color-bg-subtle);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--color-text-secondary);
+    transition: var(--transition-normal);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Active State Animation */
+.process-node.active .p-icon {
+    border-color: var(--color-accent-blue);
+    color: var(--color-accent-blue);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 113, 227, 0.4);
+    /* Stronger glow */
+}
+
+.p-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    letter-spacing: 0.5px;
+}
+
+/* Hero Scroll Explode Effect */
+.hero-visual {
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-visual.explode-away .hero-desktop {
+    transform: translateX(-200px) rotateY(-15deg) scale(0) opacity(0);
+}
+
+.hero-visual.explode-away .hero-tablet {
+    transform: translateX(200px) rotateY(15deg) scale(0) opacity(0);
+}
+
+.hero-visual.explode-away .hero-mobile {
+    transform: translateY(100px) scale(0.8) opacity(0);
+}
+
 /* Tablet Override */
 .hero-tablet .dashboard-body {
     display: block;
