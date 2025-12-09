@@ -204,6 +204,132 @@ nav {
     animation: float 6s ease-in-out infinite;
 }
 
+/* Tech Marquee Component */
+.tech-marquee {
+    width: 100%;
+    padding: 2rem 0;
+    background: var(--color-bg-subtle);
+    border-top: 1px solid var(--color-border-subtle);
+    border-bottom: 1px solid var(--color-border-subtle);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.tech-marquee::before,
+.tech-marquee::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.tech-marquee::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-bg-subtle), transparent);
+}
+
+.tech-marquee::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-bg-subtle), transparent);
+}
+
+.tech-track {
+    display: flex;
+    gap: 4rem;
+    animation: scroll 30s linear infinite;
+    width: max-content;
+    /* Ensure it fits all content */
+    padding-left: 4rem;
+    /* Initial gap */
+}
+
+/* Pause on hover for detail interaction */
+.tech-marquee:hover .tech-track {
+    animation-play-state: paused;
+}
+
+.tech-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text-secondary);
+    font-size: 1.5rem;
+    /* Icon size */
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0.6;
+    transition: var(--transition-fast);
+    cursor: default;
+}
+
+.tech-item span {
+    font-size: 1rem;
+    /* Text size */
+    font-family: var(--font-heading);
+}
+
+.tech-item:hover {
+    opacity: 1;
+    color: var(--color-text-main);
+    transform: scale(1.05);
+}
+
+/* Infinite Scroll Animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+        /* Move half way (assuming 2 sets of items) */
+    }
+}
+
+/* Impact Metrics Component */
+.impact-metrics {
+    padding: 2rem 0;
+    background: var(--color-bg-subtle);
+    border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.metrics-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.metric-item {
+    text-align: center;
+}
+
+.metric-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+    margin-bottom: 0.2rem;
+}
+
+.metric-label {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
 /* Tablet Override */
 .hero-tablet .dashboard-body {
     display: block;
