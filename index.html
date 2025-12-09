@@ -44,17 +44,18 @@
         </div>
 
         <div class="hero-visual">
-            <!-- 1. Left: Desktop Admin -->
+            <!-- 1. Left: Desktop Admin (Spanish) -->
             <div class="hero-desktop glass-panel">
                 <div class="mockup-header">
                     <div class="dots"><span></span><span></span><span></span></div>
                     <div class="header-search">
                         <ion-icon name="search-outline"></ion-icon>
-                        <span>Search...</span>
+                        <span>Buscar...</span>
                     </div>
                     <div class="header-profile"></div>
                 </div>
                 <div class="mockup-body dashboard-body" style="background: #f8fafc;">
+                    <!-- Sidebar -->
                     <div class="sidebar-mock"
                         style="width: 60px; border-right: 1px solid #e2e8f0; display: flex; flex-direction: column; align-items: center; padding-top: 15px; gap: 15px;">
                         <div class="sidebar-icon active"><ion-icon name="grid-outline"></ion-icon></div>
@@ -64,49 +65,53 @@
                         <div class="sidebar-icon" style="margin-top: auto; margin-bottom: 15px;"><ion-icon
                                 name="log-out-outline"></ion-icon></div>
                     </div>
+                    <!-- Main Content -->
                     <div class="content-mock"
                         style="padding: 20px; display: flex; flex-direction: column; gap: 15px; flex: 1;">
                         <div style="display: flex; gap: 15px;">
                             <div class="hero-stat-card">
-                                <span class="label">Revenue</span>
+                                <span class="label">Ingresos</span>
                                 <span class="value">$12.4k</span>
                             </div>
                             <div class="hero-stat-card">
-                                <span class="label">Users</span>
+                                <span class="label">Usuarios</span>
                                 <span class="value">843</span>
                             </div>
                         </div>
+                        <!-- Spanish Table -->
                         <div class="hero-table-mock">
                             <div class="table-header"
                                 style="height: auto; padding-bottom: 5px; margin-bottom: 5px; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between;">
-                                <span class="table-title">Recent Orders</span>
+                                <span class="table-title"
+                                    style="font-size: 0.8rem; font-weight: 600; color: #334155;">Pedidos
+                                    Recientes</span>
                                 <ion-icon name="filter-outline" style="color: #94a3b8;"></ion-icon>
                             </div>
                             <div class="table-row">
                                 <div class="t-col-avatar"></div>
                                 <div class="t-col-text"></div>
-                                <div class="t-col-badge success">Paid</div>
+                                <div class="t-col-badge success">Pagado</div>
                             </div>
                             <div class="table-row">
                                 <div class="t-col-avatar"></div>
                                 <div class="t-col-text"></div>
-                                <div class="t-col-badge pending">Pending</div>
+                                <div class="t-col-badge pending">Pendiente</div>
                             </div>
                             <div class="table-row">
                                 <div class="t-col-avatar"></div>
                                 <div class="t-col-text"></div>
-                                <div class="t-col-badge success">Paid</div>
+                                <div class="t-col-badge success">Pagado</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 2. Right: Tablet/Analytics (Populated Dashboard) -->
+            <!-- 2. Right: Tablet/Analytics (Spanish Dashboard) -->
             <div class="hero-tablet glass-panel">
                 <div class="mockup-header">
                     <div class="dots"><span></span><span></span><span></span></div>
-                    <div class="bar">analytics.view</div>
+                    <div class="bar">estadisticas.vista</div>
                 </div>
                 <div class="mockup-body dashboard-body" style="background: #f8fafc; padding: 0;">
                     <!-- Horizontal Nav -->
@@ -129,17 +134,24 @@
                             <div style="height: 8px; width: 60%; background: #e2e8f0; border-radius: 2px;"></div>
                             <div style="height: 8px; width: 80%; background: #e2e8f0; border-radius: 2px;"></div>
                             <div
-                                style="height: 60px; background: white; border: 1px solid #e2e8f0; border-radius: 6px; margin-top: auto;">
+                                style="height: 60px; background: white; border: 1px solid #e2e8f0; border-radius: 6px; margin-top: auto; display: flex; align-items: center; justify-content: center;">
+                                <div
+                                    style="width: 30px; height: 30px; border-radius: 50%; border: 3px solid #3b82f6; border-top-color: transparent;">
+                                </div>
                             </div>
                         </div>
                         <!-- Tablet Main -->
                         <div style="display: flex; flex-direction: column; gap: 10px;">
                             <div style="display: flex; gap: 10px;">
                                 <div
-                                    style="flex: 1; height: 50px; background: white; border: 1px solid #e2e8f0; border-radius: 6px;">
+                                    style="flex: 1; height: 50px; background: white; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px;">
+                                    <div style="font-size: 0.6rem; color: #64748b;">Visitas</div>
+                                    <div style="font-size: 0.9rem; font-weight: 700; color: #0f172a;">24.5k</div>
                                 </div>
                                 <div
-                                    style="flex: 1; height: 50px; background: white; border: 1px solid #e2e8f0; border-radius: 6px;">
+                                    style="flex: 1; height: 50px; background: white; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px;">
+                                    <div style="font-size: 0.6rem; color: #64748b;">Conversión</div>
+                                    <div style="font-size: 0.9rem; font-weight: 700; color: #0f172a;">3.2%</div>
                                 </div>
                             </div>
                             <div
@@ -154,85 +166,46 @@
                 </div>
             </div>
 
-            <!-- 3. Center: Mobile App (iPhone Frame) with Dashboard Style -->
+            <!-- 3. Center: Mobile App (iPhone Frame) -> MUSIC PLAYER -->
             <div class="hero-mobile mobile-frame">
                 <div class="iphone-notch"></div>
-                <div class="screen-content"
-                    style="background: #f8fafc; display: flex; flex-direction: column; overflow: hidden; position: relative;">
-                    <!-- App Header -->
-                    <div
-                        style="padding: 15px 15px 5px; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div style="font-size: 0.7rem; color: #64748b;">Welcome back,</div>
-                            <div style="font-size: 1rem; font-weight: 700; color: #0f172a;">Luis Silva</div>
-                        </div>
-                        <div
-                            style="width: 32px; height: 32px; background: white; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: center;">
-                            <ion-icon name="notifications-outline"
-                                style="font-size: 1.1rem; color: #64748b;"></ion-icon>
-                        </div>
-                    </div>
-
-                    <!-- Scrollable Content -->
-                    <div style="padding: 15px; display: flex; flex-direction: column; gap: 15px; overflow-y: auto;">
-                        <!-- Main Balance Card -->
-                        <div
-                            style="background: #1e293b; border-radius: 16px; padding: 20px; color: white; box-shadow: 0 10px 20px rgba(30, 41, 59, 0.2);">
-                            <div style="font-size: 0.8rem; opacity: 0.7; margin-bottom: 5px;">Total Balance</div>
-                            <div style="font-size: 1.8rem; font-weight: 700; margin-bottom: 15px;">$24,500.00</div>
-                            <div
-                                style="height: 40px; width: 100%; position: relative; border-bottom: 1px solid rgba(255,255,255,0.1);">
-                                <div class="curve-line" style="border-color: #38bdf8; height: 80%;"></div>
-                            </div>
-                        </div>
-
-                        <!-- Stats Grid -->
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                            <div
-                                style="background: white; padding: 12px; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-                                <div
-                                    style="width: 24px; height: 24px; background: #dcfce7; border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
-                                    <ion-icon name="arrow-up" style="color: #166534; font-size: 1rem;"></ion-icon>
-                                </div>
-                                <div style="font-size: 0.7rem; color: #64748b;">Income</div>
-                                <div style="font-size: 1rem; font-weight: 700; color: #0f172a;">$8,240</div>
-                            </div>
-                            <div
-                                style="background: white; padding: 12px; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-                                <div
-                                    style="width: 24px; height: 24px; background: #fee2e2; border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
-                                    <ion-icon name="arrow-down" style="color: #991b1b; font-size: 1rem;"></ion-icon>
-                                </div>
-                                <div style="font-size: 0.7rem; color: #64748b;">Expenses</div>
-                                <div style="font-size: 1rem; font-weight: 700; color: #0f172a;">$3,100</div>
-                            </div>
-                        </div>
-
-                        <!-- Recent List -->
-                        <div style="display: flex; flex-direction: column; gap: 10px;">
-                            <div style="font-size: 0.8rem; font-weight: 600; color: #334155;">Recent Transactions</div>
-                            <div class="hero-list-item" style="padding: 0; border: none;">
-                                <div class="icon-box"><ion-icon name="logo-apple"></ion-icon></div>
-                                <div class="text-lines">
-                                    <span class="t-name">Apple Store</span>
-                                    <span class="t-date">Today, 10:23 AM</span>
-                                </div>
-                                <span class="t-price">-$120.00</span>
-                            </div>
-                            <div class="hero-list-item" style="padding: 0; border: none;">
-                                <div class="icon-box" style="background: #e0f2fe; color: #0284c7;"><ion-icon
-                                        name="cash-outline"></ion-icon></div>
-                                <div class="text-lines">
-                                    <span class="t-name">Salary</span>
-                                    <span class="t-date">Yesterday</span>
-                                </div>
-                                <span class="t-price success">+$4,200.00</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="home-indicator"></div>
+                <div style="font-size: 1rem; font-weight: 700; color: #0f172a;">$8,240</div>
             </div>
+            <div style="background: white; padding: 12px; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                <div
+                    style="width: 24px; height: 24px; background: #fee2e2; border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
+                    <ion-icon name="arrow-down" style="color: #991b1b; font-size: 1rem;"></ion-icon>
+                </div>
+                <div style="font-size: 0.7rem; color: #64748b;">Expenses</div>
+                <div style="font-size: 1rem; font-weight: 700; color: #0f172a;">$3,100</div>
+            </div>
+        </div>
+
+        <!-- Recent List -->
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="font-size: 0.8rem; font-weight: 600; color: #334155;">Recent Transactions</div>
+            <div class="hero-list-item" style="padding: 0; border: none;">
+                <div class="icon-box"><ion-icon name="logo-apple"></ion-icon></div>
+                <div class="text-lines">
+                    <span class="t-name">Apple Store</span>
+                    <span class="t-date">Today, 10:23 AM</span>
+                </div>
+                <span class="t-price">-$120.00</span>
+            </div>
+            <div class="hero-list-item" style="padding: 0; border: none;">
+                <div class="icon-box" style="background: #e0f2fe; color: #0284c7;"><ion-icon
+                        name="cash-outline"></ion-icon></div>
+                <div class="text-lines">
+                    <span class="t-name">Salary</span>
+                    <span class="t-date">Yesterday</span>
+                </div>
+                <span class="t-price success">+$4,200.00</span>
+            </div>
+        </div>
+        </div>
+        </div>
+        <div class="home-indicator"></div>
+        </div>
         </div>
 
     </section>
