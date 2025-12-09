@@ -131,19 +131,10 @@
     }
 }
 
-/* Mockup Internal Animations */
-@keyframes grow-bar {
-    from {
-        height: 0;
-    }
 
-    to {
-        height: var(--target-height);
-    }
-}
 
 .chart-mock .bar {
-    animation: grow-bar 1.5s ease-out forwards;
+    /* Animation removed to ensure visibility */
     transform-origin: bottom;
 }
 
