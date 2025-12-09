@@ -500,11 +500,11 @@ nav {
     border-radius: 1px;
 }
 
-.price-tag {
-    width: 30%;
-    height: 3px;
-    background: var(--color-accent-blue);
-    border-radius: 1px;
+.price-text {
+    font-size: 10px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-top: 2px;
 }
 
 /* Dashboard */
@@ -513,6 +513,20 @@ nav {
     display: flex;
     padding: 0;
     height: 100%;
+}
+
+/* Dashboard Hover Effect */
+.stats-row,
+.chart-mock {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+}
+
+.bento-card:hover .stats-row,
+.bento-card:hover .chart-mock {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .sidebar-mock {
@@ -615,25 +629,20 @@ nav {
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Mobile App - iPhone Frame */
+/* Mobile App - iPhone Frame - Real Proportions */
 .mobile-frame {
     background: #fff;
     border: 8px solid #334155 !important;
     /* Bezel */
-    border-radius: 24px !important;
+    border-radius: 30px !important;
     position: relative;
     overflow: hidden;
-    height: 100% !important;
-    /* Fill container */
-    min-height: 260px;
-    /* Taller visual weight */
-    width: 60%;
-    /* Typical phone width ratio vs card */
-    max-width: 180px;
-    /* Don't get too fat */
+    /* Aspect Ratio ~19.5:9 approximation for container */
+    width: 140px !important;
+    height: 280px !important;
     margin: 0 auto;
     /* Center */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
 .iphone-notch {
@@ -641,10 +650,10 @@ nav {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 40%;
-    height: 18px;
+    width: 50%;
+    height: 20px;
     background: #334155;
-    border-radius: 0 0 8px 8px;
+    border-radius: 0 0 10px 10px;
     z-index: 10;
 }
 
