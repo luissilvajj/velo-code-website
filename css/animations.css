@@ -90,8 +90,10 @@
 
 @media (prefers-color-scheme: light) {
     .face {
-        border-color: rgba(0, 122, 255, 0.1);
-        background: rgba(0, 122, 255, 0.02);
+        border-color: rgba(0, 113, 227, 0.4);
+        /* Stronger Blue */
+        background: rgba(0, 113, 227, 0.05);
+        /* Subtle Tint */
     }
 }
 
