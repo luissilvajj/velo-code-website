@@ -109,8 +109,8 @@ nav {
     position: absolute;
     top: 40px;
     left: 0;
-    width: 480px;
-    /* Larger */
+    width: 520px;
+    /* Increased to show full sidebar */
     height: 320px;
     /* Larger */
     background: var(--color-bg-subtle);
