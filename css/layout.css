@@ -128,119 +128,25 @@ nav {
     transform: rotateY(0) rotateX(0) scale(1.02);
 }
 
-/* 3. Minimalist Landing Card (Center Front) */
-.hero-landing-card {
+/* 3. Mobile Mockup (Center Front) */
+.hero-mobile {
     position: absolute;
-    bottom: -20px;
-    /* Slight overlap */
+    bottom: 0;
     left: 50%;
-    margin-left: -170px;
-    /* Center (Width 340 / 2) */
-    width: 340px;
-    height: 440px;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
+    margin-left: -80px;
+    /* Half of width approx to center */
+    /* Mobile frame base styles will apply, we just position */
+    transform: translateZ(50px);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+    /* Deep shadow */
     z-index: 10;
-    transform: translateZ(60px);
-    /* Pop out more */
     animation: float 6s ease-in-out infinite;
-    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.landing-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-    border-bottom: 2px solid #000;
-    padding-bottom: 10px;
-}
-
-.landing-logo {
-    font-weight: 800;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    color: #000;
-}
-
-.landing-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    align-items: flex-end;
-}
-
-.l-bar {
-    width: 20px;
-    height: 2px;
-    background: #000;
-}
-
-.l-bar:nth-child(2) {
-    width: 14px;
-}
-
-.landing-hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-}
-
-.landing-title-group {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.landing-big-text {
-    font-size: 2.8rem;
-    font-weight: 900;
-    line-height: 0.9;
-    color: #000;
-    letter-spacing: -2px;
-}
-
-.landing-visual-row {
-    display: flex;
-    gap: 15px;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-.landing-black-box {
-    width: 60px;
-    height: 60px;
-    background: #000;
-}
-
-.landing-text-lines {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.l-line {
-    background: #cbd5e1;
-    /* Visible Gray */
-    height: 8px;
-    border-radius: 4px;
-}
-
-.l-line.long {
-    width: 100px;
-}
-
-.l-line.medium {
-    width: 80px;
-}
-
-.l-line.short {
-    width: 50px;
+/* Tablet Override */
+.hero-tablet .dashboard-body {
+    display: block;
+    /* Reset flex center */
 }
 
 /* 2. Tablet Mockup (Right Back) */

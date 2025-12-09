@@ -102,43 +102,103 @@
                 </div>
             </div>
 
-            <!-- 2. Right: Tablet/Analytics -->
+            <!-- 2. Right: Tablet/Analytics (Populated Dashboard) -->
             <div class="hero-tablet glass-panel">
                 <div class="mockup-header">
                     <div class="dots"><span></span><span></span><span></span></div>
                     <div class="bar">analytics.view</div>
                 </div>
-                <div class="mockup-body dashboard-body"
-                    style="background: white; align-items: center; justify-content: center; display: flex;">
-                    <div class="big-graph-mock"></div>
-                </div>
-            </div>
-
-            <!-- 3. Center: Minimalist Landing Page (Replaces Mobile) -->
-            <div class="hero-landing-card">
-                <!-- Minimal Header -->
-                <div class="landing-header">
-                    <div class="landing-logo">AGNCY.</div>
-                    <div class="landing-menu">
-                        <div class="l-bar"></div>
-                        <div class="l-bar"></div>
+                <div class="mockup-body dashboard-body" style="background: #f8fafc; padding: 0;">
+                    <!-- Horizontal Nav -->
+                    <div
+                        style="height: 30px; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; padding: 0 10px; gap: 10px;">
+                        <div style="width: 15px; height: 15px; background: #e2e8f0; border-radius: 4px;"></div>
+                        <div style="width: 60px; height: 6px; background: #cbd5e1; border-radius: 3px;"></div>
+                        <div
+                            style="margin-left: auto; width: 20px; height: 20px; background: #e2e8f0; border-radius: 50%;">
+                        </div>
                     </div>
-                </div>
-                <!-- Hero Content -->
-                <div class="landing-hero-content">
-                    <div class="landing-title-group">
-                        <div class="landing-big-text">BOLD</div>
-                        <div class="landing-big-text">DESIGN</div>
-                    </div>
-                    <div class="landing-visual-row">
-                        <div class="landing-black-box"></div>
-                        <div class="landing-text-lines">
-                            <div class="l-line long"></div>
-                            <div class="l-line medium"></div>
-                            <div class="l-line short"></div>
+                    <!-- Tablet Content Grid -->
+                    <div
+                        style="padding: 10px; display: grid; grid-template-columns: 80px 1fr; gap: 10px; height: 100%;">
+                        <!-- Tablet Sidebar -->
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <div
+                                style="height: 20px; background: #eff6ff; border-radius: 4px; border: 1px solid #dbeafe;">
+                            </div>
+                            <div style="height: 8px; width: 60%; background: #e2e8f0; border-radius: 2px;"></div>
+                            <div style="height: 8px; width: 80%; background: #e2e8f0; border-radius: 2px;"></div>
+                            <div
+                                style="height: 60px; background: white; border: 1px solid #e2e8f0; border-radius: 6px; margin-top: auto;">
+                            </div>
+                        </div>
+                        <!-- Tablet Main -->
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <div style="display: flex; gap: 10px;">
+                                <div
+                                    style="flex: 1; height: 50px; background: white; border: 1px solid #e2e8f0; border-radius: 6px;">
+                                </div>
+                                <div
+                                    style="flex: 1; height: 50px; background: white; border: 1px solid #e2e8f0; border-radius: 6px;">
+                                </div>
+                            </div>
+                            <div
+                                style="flex: 1; background: white; border: 1px solid #e2e8f0; border-radius: 6px; position: relative; overflow: hidden;">
+                                <div
+                                    style="position: absolute; bottom: 0; left: 0; right: 0; height: 60%; background: linear-gradient(180deg, transparent, #eff6ff);">
+                                </div>
+                                <div class="curve-line" style="border-color: #3b82f6;"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- 3. Center: Mobile App (iPhone Frame Returned) with Landing Page Style -->
+            <div class="hero-mobile mobile-frame">
+                <div class="iphone-notch"></div>
+                <div class="screen-content"
+                    style="background: #fff; display: flex; flex-direction: column; overflow: hidden;">
+                    <!-- Mobile Browser Header -->
+                    <div
+                        style="padding: 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f1f5f9;">
+                        <div style="width: 20px; height: 20px; background: #0f172a; border-radius: 4px;"></div>
+                        <!-- Logo -->
+                        <div style="display: flex; gap: 5px;">
+                            <div style="width: 4px; height: 4px; background: #94a3b8; border-radius: 50%;"></div>
+                            <div style="width: 4px; height: 4px; background: #94a3b8; border-radius: 50%;"></div>
+                        </div>
+                    </div>
+                    <!-- Mobile Hero Section (Skeleton Landing) -->
+                    <div
+                        style="padding: 20px; flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 15px;">
+                        <div style="width: 60px; height: 6px; background: #cbd5e1; border-radius: 3px;"></div>
+                        <!-- Small Tag -->
+                        <div style="width: 80%; height: 24px; background: #0f172a; border-radius: 4px;"></div>
+                        <!-- Headline 1 -->
+                        <div style="width: 60%; height: 24px; background: #0f172a; border-radius: 4px;"></div>
+                        <!-- Headline 2 -->
+                        <div
+                            style="width: 90%; height: 8px; background: #cbd5e1; border-radius: 4px; margin-top: 10px;">
+                        </div> <!-- Body Text -->
+                        <div style="width: 70%; height: 8px; background: #cbd5e1; border-radius: 4px;"></div>
+                        <!-- Body Text -->
+
+                        <!-- Hero Image / Visual -->
+                        <div
+                            style="width: 100%; height: 120px; background: #f1f5f9; border-radius: 8px; margin-top: 10px; border: 1px solid #e2e8f0; position: relative; overflow: hidden;">
+                            <div
+                                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; border-radius: 50%; border: 4px solid #cbd5e1;">
+                            </div>
+                        </div>
+
+                        <!-- CTA Button -->
+                        <div
+                            style="width: 120px; height: 36px; background: #3b82f6; border-radius: 18px; margin-top: auto;">
+                        </div>
+                    </div>
+                </div>
+                <div class="home-indicator"></div>
             </div>
         </div>
 
