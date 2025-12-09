@@ -366,7 +366,7 @@ nav {
     width: 0%;
     background: linear-gradient(90deg, var(--color-accent-blue), var(--color-accent-green));
     /* Animation handled by JS for sync */
-    transition: width 6s linear;
+    transition: width 1.5s linear;
 }
 
 .process-node {

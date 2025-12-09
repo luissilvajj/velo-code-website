@@ -58,18 +58,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Start Line Animation
                     processLineFill.style.width = '100%';
 
-                    // Slower Sync Logic (Total 6000ms)
+                    // Fast Sync Logic (Total 1.5s)
                     // Node 0: IDEA (Start immediately)
-                    setTimeout(() => processNodes[0].classList.add('active'), 100);
+                    setTimeout(() => processNodes[0].classList.add('active'), 50);
 
-                    // Node 1: DISEÑO (approx 33% -> 2000ms)
-                    setTimeout(() => processNodes[1].classList.add('active'), 2000);
+                    // Node 1: DISEÑO (approx 33% -> 500ms)
+                    setTimeout(() => processNodes[1].classList.add('active'), 500);
 
-                    // Node 2: CÓDIGO (approx 66% -> 4000ms)
-                    setTimeout(() => processNodes[2].classList.add('active'), 4000);
+                    // Node 2: CÓDIGO (approx 66% -> 1000ms)
+                    setTimeout(() => processNodes[2].classList.add('active'), 1000);
 
-                    // Node 3: LANZAMIENTO (100% -> 6000ms)
-                    setTimeout(() => processNodes[3].classList.add('active'), 6000);
+                    // Node 3: LANZAMIENTO (100% -> 1500ms)
+                    setTimeout(() => processNodes[3].classList.add('active'), 1500);
                 }
             });
         }, { threshold: 0.5 });
