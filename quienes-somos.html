@@ -11,359 +11,6 @@
     <!-- Ionicons for Icons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-    <style>
-        /* Premium Minimalist Styles for About Page */
-        .about-hero {
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 20s ease-in-out infinite;
-        }
-
-        .about-hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(34, 197, 94, 0.06) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 25s ease-in-out infinite reverse;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translate(0, 0) rotate(0deg);
-            }
-
-            33% {
-                transform: translate(30px, -30px) rotate(120deg);
-            }
-
-            66% {
-                transform: translate(-20px, 20px) rotate(240deg);
-            }
-        }
-
-        .about-section {
-            padding: 6rem 0;
-            position: relative;
-        }
-
-        .content-wrapper {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .minimal-card {
-            background: var(--color-card-bg);
-            border: 1px solid var(--color-border-subtle);
-            border-radius: 20px;
-            padding: 3rem;
-            margin-bottom: 3rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .minimal-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--color-accent-blue), var(--color-accent-green));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .minimal-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .minimal-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .icon-large {
-            width: 64px;
-            height: 64px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 16px;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-            transition: all 0.4s ease;
-        }
-
-        .icon-large.blue {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(99, 102, 241, 0.05));
-            color: var(--color-accent-blue);
-        }
-
-        .icon-large.green {
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05));
-            color: var(--color-accent-green);
-        }
-
-        .icon-large.purple {
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(168, 85, 247, 0.05));
-            color: #a855f7;
-        }
-
-        .minimal-card:hover .icon-large {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .value-item {
-            text-align: center;
-            padding: 2rem;
-            border-radius: 16px;
-            background: var(--color-card-bg);
-            border: 1px solid var(--color-border-subtle);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .value-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.03), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .value-item:hover::before {
-            left: 100%;
-        }
-
-        .value-item:hover {
-            transform: translateY(-8px);
-            border-color: var(--color-accent-blue);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-        }
-
-        .service-detail {
-            padding: 2rem;
-            border-radius: 16px;
-            margin-bottom: 1.5rem;
-            background: var(--color-card-bg);
-            border-left: 3px solid var(--color-accent-blue);
-            transition: all 0.3s ease;
-        }
-
-        .service-detail:nth-child(2) {
-            border-left-color: var(--color-accent-green);
-        }
-
-        .service-detail:nth-child(3) {
-            border-left-color: #a855f7;
-        }
-
-        .service-detail:hover {
-            transform: translateX(8px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
-        }
-
-        .service-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .checkmark-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .checkmark-item {
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-            padding: 1rem;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .checkmark-item:hover {
-            background: var(--color-hover-subtle);
-            transform: translateX(8px);
-        }
-
-        .checkmark-icon {
-            flex-shrink: 0;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--color-accent-green), #10b981);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.875rem;
-        }
-
-        /* Floating visual elements */
-        .visual-element {
-            position: absolute;
-            opacity: 0.4;
-            pointer-events: none;
-        }
-
-        .circle-1 {
-            top: 10%;
-            right: 5%;
-            width: 100px;
-            height: 100px;
-            border: 2px solid var(--color-accent-blue);
-            border-radius: 50%;
-            animation: float 15s ease-in-out infinite;
-        }
-
-        .circle-2 {
-            bottom: 20%;
-            left: 8%;
-            width: 80px;
-            height: 80px;
-            border: 2px solid var(--color-accent-green);
-            border-radius: 50%;
-            animation: float 20s ease-in-out infinite reverse;
-        }
-
-        .square-1 {
-            top: 40%;
-            left: 3%;
-            width: 60px;
-            height: 60px;
-            border: 2px solid rgba(168, 85, 247, 0.3);
-            border-radius: 12px;
-            animation: float 18s ease-in-out infinite;
-        }
-
-        /* Contact Form Premium Style */
-        .contact-wrapper {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 1rem 1.25rem;
-            border: 1.5px solid var(--color-border-subtle);
-            border-radius: 12px;
-            background: var(--color-card-bg);
-            color: var(--color-text-primary);
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: var(--color-accent-blue);
-            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
-        }
-
-        .btn-primary {
-            background: var(--color-accent-blue);
-            color: white !important;
-            font-weight: 600;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-
-        .btn-whatsapp {
-            background: #25D366;
-            color: white !important;
-            font-weight: 600;
-        }
-
-        .btn-whatsapp:hover {
-            background: #20ba5a;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(37, 211, 102, 0.3);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .about-hero {
-                min-height: 50vh;
-            }
-
-            .minimal-card {
-                padding: 2rem;
-            }
-
-            .about-section {
-                padding: 3rem 0;
-            }
-
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Hide decorative elements on small screens */
-        @media (max-width: 640px) {
-            .visual-element {
-                display: none;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -381,7 +28,8 @@
                 <ul class="nav-links">
                     <li><a href="index.html#inicio">Inicio</a></li>
                     <li><a href="index.html#servicios">Servicios</a></li>
-                    <li><a href="quienes-somos.html" class="active">Quiénes Somos</a></li>
+                    <li><a href="quienes-somos.html" class="active" style="color: var(--color-white);">Quiénes Somos</a>
+                    </li>
                     <li><a href="index.html#filosofia">Filosofía</a></li>
                     <li><a href="#contacto" class="btn btn-primary"
                             style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Contactar</a></li>
@@ -390,257 +38,200 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="about-hero">
-        <div class="container" style="position: relative; z-index: 1;">
-            <h1 class="reveal" style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem;">
-                Quiénes <span class="text-gradient">Somos</span>
-            </h1>
-            <p class="reveal"
-                style="transition-delay: 0.2s; max-width: 600px; margin: 0 auto; font-size: 1.25rem; color: var(--color-text-secondary); line-height: 1.6;">
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container hero-content">
+            <h1 class="reveal">Quiénes <span class="text-gradient">Somos</span></h1>
+            <p class="reveal" style="transition-delay: 0.2s; font-size: 1.5rem; color: var(--color-text-secondary);">
                 Desarrollando el Futuro Emprendedor
             </p>
         </div>
-
-        <!-- Decorative elements -->
-        <div class="visual-element circle-1"></div>
-        <div class="visual-element circle-2"></div>
-        <div class="visual-element square-1"></div>
     </section>
 
-    <!-- Main Content -->
-    <section class="about-section">
-        <div class="container content-wrapper">
-
-            <!-- Nuestra Historia -->
-            <div class="minimal-card reveal">
-                <div class="icon-large blue">
-                    <ion-icon name="rocket-outline"></ion-icon>
+    <!-- Story & Mission -->
+    <section class="section">
+        <div class="container">
+            <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+                <!-- Historia -->
+                <div class="card reveal">
+                    <div class="card-icon" style="color: var(--color-accent-blue);"><ion-icon
+                            name="rocket-outline"></ion-icon></div>
+                    <h3>Nuestra Historia</h3>
+                    <p>Somos una agencia de desarrollo de software enfocada 100% en emprendedores y startups. Nacimos
+                        para
+                        nivelar el campo de juego, ofreciendo el mismo estándar de calidad e innovación que usan las
+                        grandes
+                        corporaciones, pero adaptado a la agilidad, el presupuesto y la visión única de tu proyecto.</p>
                 </div>
-                <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--color-text-primary);">Nuestra Historia
-                </h2>
-                <p
-                    style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-text-primary);">
-                    Somos una agencia de desarrollo de software enfocada 100% en emprendedores y startups. Nacimos para
-                    nivelar el campo de juego, ofreciendo el mismo estándar de calidad e innovación que usan las grandes
-                    corporaciones, pero adaptado a la agilidad, el presupuesto y la visión única de tu proyecto.
+                <!-- Mision -->
+                <div class="card reveal" style="transition-delay: 0.2s;">
+                    <div class="card-icon" style="color: var(--color-accent-green);"><ion-icon
+                            name="bulb-outline"></ion-icon></div>
+                    <h3>Nuestra Misión</h3>
+                    <p>Empoderar a emprendedores con tecnología de clase mundial. Democratizamos la innovación
+                        tecnológica,
+                        haciendo que herramientas digitales robustas, escalables y elegantes estén al alcance de cada
+                        emprendedor con una visión audaz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values -->
+    <section class="section" style="background: var(--color-bg-subtle);">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Nuestros <span class="text-gradient">Valores</span></h2>
+                <p style="color: var(--color-text-secondary);">Los pilares que sostienen cada línea de código.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card reveal" style="transition-delay: 0.1s;">
+                    <div class="card-icon" style="color: var(--color-accent-blue);"><ion-icon
+                            name="flash-outline"></ion-icon></div>
+                    <h3>Innovación</h3>
+                    <p>Adoptamos las últimas tecnologías para crear soluciones que marquen la diferencia y se mantengan
+                        relevantes en el tiempo.</p>
+                </div>
+                <div class="card reveal" style="transition-delay: 0.2s;">
+                    <div class="card-icon" style="color: var(--color-accent-green);"><ion-icon
+                            name="shield-checkmark-outline"></ion-icon></div>
+                    <h3>Calidad</h3>
+                    <p>No hacemos concesiones. Cada interfaz, cada base de datos y cada animación refleja nuestro
+                        compromiso absoluto con la excelencia.</p>
+                </div>
+                <div class="card reveal" style="transition-delay: 0.3s;">
+                    <div class="card-icon" style="color: var(--color-accent-violet);"><ion-icon
+                            name="people-outline"></ion-icon></div>
+                    <h3>Colaboración</h3>
+                    <p>Tu visión es nuestra guía. Trabajamos contigo, no solo para ti, asegurando que el producto final
+                        sea exactamente lo que soñaste.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Detailed -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Nuestros <span class="text-gradient">Servicios</span></h2>
+                <p style="color: var(--color-text-secondary);">Soluciones integrales para cada etapa de tu crecimiento.
                 </p>
-                <p style="font-size: 1.125rem; line-height: 1.8; color: var(--color-text-primary);">
-                    Entendemos que lanzar una nueva empresa requiere eficiencia. Por eso, nuestro equipo se especializa
-                    en convertir tu idea en un producto digital robusto y escalable.
-                </p>
             </div>
 
-            <!-- Nuestra Misión -->
-            <div class="minimal-card reveal">
-                <div class="icon-large green">
-                    <ion-icon name="bulb-outline"></ion-icon>
+            <div class="grid-3">
+                <div class="bento-card reveal">
+                    <div class="card-icon" style="color: var(--color-accent-blue); font-size: 2rem;"><ion-icon
+                            name="laptop-outline"></ion-icon></div>
+                    <div class="bento-info">
+                        <h3>Desarrollo Web</h3>
+                        <p style="margin-bottom: 1rem;">Creamos plataformas web escalables y de alto rendimiento. Desde
+                            landing pages que convierten hasta dashboards administrativos complejos.</p>
+                        <ul
+                            style="font-size: 0.85rem; color: var(--color-text-secondary); list-style: disc; padding-left: 1.2rem;">
+                            <li>UI/UX Premium</li>
+                            <li>Frontend & Backend</li>
+                            <li>APIs Robustas</li>
+                        </ul>
+                    </div>
                 </div>
-                <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--color-text-primary);">Nuestra Misión
-                </h2>
-                <p style="font-size: 1.125rem; line-height: 1.8; color: var(--color-text-primary);">
-                    Empoderar a emprendedores y startups con tecnología de clase mundial. Creemos firmemente que el
-                    acceso a software de alta calidad no debe ser exclusivo de las grandes corporaciones. Nuestra misión
-                    es democratizar la innovación tecnológica, haciendo que herramientas digitales robustas, escalables
-                    y elegantes estén al alcance de cada emprendedor con una visión audaz.
-                </p>
-            </div>
 
-            <!-- Nuestros Valores -->
-            <div class="reveal" style="margin-bottom: 4rem;">
-                <h2 style="font-size: 2rem; margin-bottom: 3rem; text-align: center; color: var(--color-text-primary);">
-                    Nuestros <span class="text-gradient">Valores</span>
-                </h2>
-                <div class="values-grid">
-                    <div class="value-item">
-                        <div class="icon-large blue" style="margin: 0 auto 1.5rem;">
-                            <ion-icon name="rocket-outline"></ion-icon>
-                        </div>
-                        <h3 style="margin-bottom: 0.75rem; color: var(--color-text-primary);">Innovación</h3>
-                        <p style="color: var(--color-text-secondary); line-height: 1.6;">
-                            Adoptamos las últimas tecnologías para crear soluciones que marquen la diferencia.
-                        </p>
+                <div class="bento-card reveal" style="transition-delay: 0.1s;">
+                    <div class="card-icon" style="color: var(--color-accent-green); font-size: 2rem;"><ion-icon
+                            name="phone-portrait-outline"></ion-icon></div>
+                    <div class="bento-info">
+                        <h3>Apps Móviles</h3>
+                        <p style="margin-bottom: 1rem;">Aplicaciones nativas y multiplataforma (iOS/Android) diseñadas
+                            para ofrecer una experiencia de usuario fluida y adictiva.</p>
+                        <ul
+                            style="font-size: 0.85rem; color: var(--color-text-secondary); list-style: disc; padding-left: 1.2rem;">
+                            <li>React Native / Flutter</li>
+                            <li>Notificaciones Push</li>
+                            <li>Diseño Mobile-First</li>
+                        </ul>
                     </div>
-                    <div class="value-item">
-                        <div class="icon-large green" style="margin: 0 auto 1.5rem;">
-                            <ion-icon name="shield-checkmark-outline"></ion-icon>
-                        </div>
-                        <h3 style="margin-bottom: 0.75rem; color: var(--color-text-primary);">Calidad</h3>
-                        <p style="color: var(--color-text-secondary); line-height: 1.6;">
-                            No hacemos concesiones. Cada línea de código refleja nuestro compromiso con la excelencia.
-                        </p>
-                    </div>
-                    <div class="value-item">
-                        <div class="icon-large purple" style="margin: 0 auto 1.5rem;">
-                            <ion-icon name="people-outline"></ion-icon>
-                        </div>
-                        <h3 style="margin-bottom: 0.75rem; color: var(--color-text-primary);">Colaboración</h3>
-                        <p style="color: var(--color-text-secondary); line-height: 1.6;">
-                            Trabajamos contigo, no para ti. Tu visión guía cada decisión que tomamos.
-                        </p>
+                </div>
+
+                <div class="bento-card reveal" style="transition-delay: 0.2s;">
+                    <div class="card-icon" style="color: var(--color-accent-violet); font-size: 2rem;"><ion-icon
+                            name="code-slash-outline"></ion-icon></div>
+                    <div class="bento-info">
+                        <h3>Software a Medida</h3>
+                        <p style="margin-bottom: 1rem;">Automatización de procesos y herramientas internas construidas
+                            específicamente para las necesidades operativas de tu empresa.</p>
+                        <ul
+                            style="font-size: 0.85rem; color: var(--color-text-secondary); list-style: disc; padding-left: 1.2rem;">
+                            <li>Sass Development</li>
+                            <li>Integraciones Cloud</li>
+                            <li>Mantenimiento</li>
+                        </ul>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Nuestros Servicios -->
-            <div class="reveal" style="margin-bottom: 4rem;">
-                <h2 style="font-size: 2rem; margin-bottom: 3rem; text-align: center; color: var(--color-text-primary);">
-                    Nuestros <span class="text-gradient">Servicios</span>
-                </h2>
+    <!-- Why Choose Us -->
+    <section class="section" style="background: var(--color-bg-subtle);">
+        <div class="container" style="max-width: 800px;">
+            <div class="section-header reveal">
+                <h2>¿Por Qué <span class="text-gradient">Elegirnos?</span></h2>
+            </div>
 
-                <div>
-                    <!-- Servicio 1 -->
-                    <div class="service-detail">
-                        <div class="service-header">
-                            <div class="icon-large blue" style="margin: 0;">
-                                <ion-icon name="laptop-outline"></ion-icon>
-                            </div>
-                            <h3 style="margin: 0; color: var(--color-text-primary);">Desarrollo de Aplicaciones Web</h3>
-                        </div>
-                        <p style="color: var(--color-text-primary); line-height: 1.7; margin-bottom: 1rem;">
-                            Creamos plataformas web escalables y de alto rendimiento, desde landing pages de conversión
-                            hasta aplicaciones web complejas. Utilizamos tecnologías modernas para garantizar que tu
-                            producto pueda crecer contigo.
-                        </p>
-                        <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6;">
-                            <strong>Incluye:</strong> Diseño UI/UX, desarrollo frontend y backend, integración de APIs,
-                            optimización de performance.
-                        </p>
+            <div class="checklist reveal">
+                <div class="checklist-item">
+                    <div class="check-icon"><ion-icon name="checkmark"></ion-icon></div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem; color: var(--color-white);">Enfoque en Startups</h4>
+                        <p style="color: var(--color-text-secondary); font-size: 0.95rem;">Entendemos el ritmo
+                            vertiginoso del emprendimiento. Creamos MVPs rápidos sin sacrificar calidad.</p>
                     </div>
-
-                    <!-- Servicio 2 -->
-                    <div class="service-detail">
-                        <div class="service-header">
-                            <div class="icon-large green" style="margin: 0;">
-                                <ion-icon name="phone-portrait-outline"></ion-icon>
-                            </div>
-                            <h3 style="margin: 0; color: var(--color-text-primary);">Apps Móviles (iOS/Android)</h3>
-                        </div>
-                        <p style="color: var(--color-text-primary); line-height: 1.7; margin-bottom: 1rem;">
-                            Desarrollamos aplicaciones móviles nativas y multiplataforma que ofrecen experiencias
-                            fluidas. Tu app estará optimizada para rendimiento y lista para escalar.
-                        </p>
-                        <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6;">
-                            <strong>Incluye:</strong> React Native/Flutter, integración con servicios en la nube, push
-                            notifications, autenticación segura.
-                        </p>
+                </div>
+                <div class="checklist-item">
+                    <div class="check-icon"><ion-icon name="checkmark"></ion-icon></div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem; color: var(--color-white);">Tecnología de Punta</h4>
+                        <p style="color: var(--color-text-secondary); font-size: 0.95rem;">Usamos el stack tecnológico
+                            más moderno (React, Node, Python, AWS) para garantizar longevidad.</p>
                     </div>
-
-                    <!-- Servicio 3 -->
-                    <div class="service-detail">
-                        <div class="service-header">
-                            <div class="icon-large purple" style="margin: 0;">
-                                <ion-icon name="code-slash-outline"></ion-icon>
-                            </div>
-                            <h3 style="margin: 0; color: var(--color-text-primary);">Software Personalizado</h3>
-                        </div>
-                        <p style="color: var(--color-text-primary); line-height: 1.7; margin-bottom: 1rem;">
-                            Creamos soluciones de software a medida para automatizar y optimizar tus procesos de
-                            negocio. Lo construimos específicamente para tus necesidades.
-                        </p>
-                        <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.6;">
-                            <strong>Incluye:</strong> Análisis de requerimientos, arquitectura de sistemas, desarrollo
-                            full-stack, soporte y mantenimiento.
-                        </p>
+                </div>
+                <div class="checklist-item">
+                    <div class="check-icon"><ion-icon name="checkmark"></ion-icon></div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem; color: var(--color-white);">Transparencia Total</h4>
+                        <p style="color: var(--color-text-secondary); font-size: 0.95rem;">Comunicación clara y entregas
+                            iterativas. Sabrás exactamente en qué estado está tu proyecto siempre.</p>
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="check-icon"><ion-icon name="checkmark"></ion-icon></div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem; color: var(--color-white);">Escalabilidad Real</h4>
+                        <p style="color: var(--color-text-secondary); font-size: 0.95rem;">No construimos para hoy,
+                            construimos para cuando tengas 100,000 usuarios.</p>
                     </div>
                 </div>
             </div>
-
-            <!-- Por Qué Elegirnos -->
-            <div class="minimal-card reveal">
-                <h2
-                    style="font-size: 2rem; margin-bottom: 2.5rem; text-align: center; color: var(--color-text-primary);">
-                    ¿Por Qué <span class="text-gradient">Elegirnos</span>?
-                </h2>
-
-                <div class="checkmark-list">
-                    <div class="checkmark-item">
-                        <div class="checkmark-icon">
-                            <ion-icon name="checkmark"></ion-icon>
-                        </div>
-                        <div>
-                            <h4 style="margin: 0 0 0.5rem 0; color: var(--color-text-primary);">Enfoque 100% en
-                                Emprendedores</h4>
-                            <p style="color: var(--color-text-secondary); line-height: 1.6; margin: 0;">
-                                Entendemos los desafíos únicos de lanzar un negocio. Nuestros servicios están diseñados
-                                para maximizar tu ROI.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="checkmark-item">
-                        <div class="checkmark-icon">
-                            <ion-icon name="checkmark"></ion-icon>
-                        </div>
-                        <div>
-                            <h4 style="margin: 0 0 0.5rem 0; color: var(--color-text-primary);">Tecnología de Punta</h4>
-                            <p style="color: var(--color-text-secondary); line-height: 1.6; margin: 0;">
-                                Usamos frameworks modernos que garantizan rendimiento, seguridad y escalabilidad desde
-                                el día uno.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="checkmark-item">
-                        <div class="checkmark-icon">
-                            <ion-icon name="checkmark"></ion-icon>
-                        </div>
-                        <div>
-                            <h4 style="margin: 0 0 0.5rem 0; color: var(--color-text-primary);">Agilidad y Transparencia
-                            </h4>
-                            <p style="color: var(--color-text-secondary); line-height: 1.6; margin: 0;">
-                                Metodologías ágiles con entregas iterativas y comunicación constante. Siempre sabrás en
-                                qué estamos trabajando.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="checkmark-item">
-                        <div class="checkmark-icon">
-                            <ion-icon name="checkmark"></ion-icon>
-                        </div>
-                        <div>
-                            <h4 style="margin: 0 0 0.5rem 0; color: var(--color-text-primary);">Preparado para Escalar
-                            </h4>
-                            <p style="color: var(--color-text-secondary); line-height: 1.6; margin: 0;">
-                                Construimos tu próxima etapa de crecimiento. Tu plataforma estará lista para crecer
-                                rápidamente.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contacto" class="section" style="padding-bottom: 8rem;">
-        <div class="container contact-wrapper">
-            <div class="section-header reveal" style="text-align: center; margin-bottom: 3rem;">
-                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Cuéntanos de <span class="text-gradient">Tu
-                        Proyecto</span></h2>
-                <p style="color: var(--color-text-secondary); font-size: 1.125rem;">Estamos listos para hacer realidad
-                    tu visión.</p>
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>¿Listo para <span class="text-gradient">Despegar</span>?</h2>
+                <p style="color: var(--color-text-secondary);">Cuéntanos sobre tu visión o hablemos directo.</p>
             </div>
 
-            <div class="reveal minimal-card">
+            <div class="reveal glass-panel" style="max-width: 600px; margin: 0 auto; padding: 3rem;">
                 <form action="#" style="display: flex; flex-direction: column; gap: 1.5rem;">
-                    <div class="form-group">
-                        <input type="text" placeholder="Nombre" class="form-input">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Correo Electrónico" class="form-input">
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Cuéntanos brevemente sobre tu proyecto..." rows="5"
-                            class="form-input"></textarea>
-                    </div>
+                    <input type="text" placeholder="Nombre" class="form-input">
+                    <input type="email" placeholder="Correo Electrónico" class="form-input">
+                    <textarea placeholder="Cuéntanos brevemente sobre tu proyecto..." rows="4"
+                        class="form-input"></textarea>
 
-                    <button type="submit" class="btn btn-primary"
-                        style="width: 100%; padding: 1rem; font-size: 1.05rem;">
-                        Iniciar Proyecto
-                    </button>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Iniciar Proyecto</button>
 
                     <div style="display: flex; align-items: center; gap: 1rem; margin: 1rem 0;">
                         <div style="flex: 1; height: 1px; background: var(--color-border-subtle);"></div>
@@ -648,10 +239,8 @@
                         <div style="flex: 1; height: 1px; background: var(--color-border-subtle);"></div>
                     </div>
 
-                    <a href="https://wa.me/584241672737" target="_blank" class="btn btn-whatsapp"
-                        style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 1rem;">
-                        <ion-icon name="logo-whatsapp" style="font-size: 1.4rem;"></ion-icon>
-                        <span style="font-size: 1.05rem;">WhatsApp Directo</span>
+                    <a href="https://wa.me/584241672737" target="_blank" class="btn btn-whatsapp">
+                        <ion-icon name="logo-whatsapp" style="font-size: 1.2rem;"></ion-icon> WhatsApp Directo
                     </a>
                 </form>
             </div>
