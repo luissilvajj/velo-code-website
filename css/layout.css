@@ -62,17 +62,22 @@ position: relative;
 }
 
 /* Hero Split Layout */
+/* Hero Centered Layout (Modified) */
 @media (min-width: 900px) {
     .hero {
-        flex-direction: row;
-        text-align: left;
-        justify-content: space-between;
-        padding: 0 var(--spacing-xl);
+        flex-direction: column;
+        /* Stack vertically */
+        text-align: center;
+        justify-content: center;
+        padding-top: 100px;
+        /* More top space */
     }
 
     .hero-content {
-        max-width: 50%;
-        margin: 0;
+        max-width: 800px;
+        /* Return to wide */
+        margin: 0 auto 3rem auto;
+        /* Center text and add bottom gap */
     }
 }
 
@@ -90,6 +95,8 @@ position: relative;
 @media (min-width: 900px) {
     .hero-visual {
         display: block;
+        margin: 0 auto;
+        /* Center the visual container */
     }
 }
 
