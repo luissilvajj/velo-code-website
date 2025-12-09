@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velo Code | Desarrollo Web de Última Generación</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <!-- Ionicons for Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Velo Code<span style="color:var(--color-accent-green)">.</span></div>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#filosofia">Filosofía</a></li>
+                    <li><a href="#contacto" class="btn btn-primary"
+                            style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Contactar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="geo-3d-container">
+            <div class="cube">
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div class="face right"></div>
+                <div class="face left"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+        </div>
+
+        <div class="container hero-content">
+            <h1 class="reveal">Construimos el <span class="text-gradient">Futuro Digital</span> de tu Empresa</h1>
+            <p class="reveal" style="transition-delay: 0.2s;">Desarrollo web de alto rendimiento, diseño de vanguardia y
+                estrategias escalables.</p>
+            <div class="reveal" style="transition-delay: 0.4s;">
+                <a href="#contacto" class="btn btn-primary magnetic-btn">Iniciar Proyecto</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Excelencia <span class="text-accent">Técnica</span></h2>
+                <p style="color: var(--color-text-secondary);">Infraestructura robusta con diseño atemporal.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card reveal" style="transition-delay: 0.1s;">
+                    <div class="card-icon"><ion-icon name="laptop-outline"></ion-icon></div>
+                    <h3>Desarrollo Web</h3>
+                    <p>Performance nativo. Optimizamos cada línea de código para una velocidad inigualable.</p>
+                </div>
+                <div class="card reveal" style="transition-delay: 0.2s;">
+                    <div class="card-icon"><ion-icon name="layers-outline"></ion-icon></div>
+                    <h3>Arquitectura</h3>
+                    <p>Sistemas escalables diseñados para soportar el crecimiento de su negocio sin fricción.</p>
+                </div>
+                <div class="card reveal" style="transition-delay: 0.3s;">
+                    <div class="card-icon"><ion-icon name="phone-portrait-outline"></ion-icon></div>
+                    <h3>Diseño de Producto</h3>
+                    <p>Interfaces que desaparecen, dejando solo la utilidad y el contenido en primer plano.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section (Mini Mockups) -->
+    <section id="portafolio" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Nuestro <span class="text-gradient">Trabajo</span></h2>
+                <p style="color: var(--color-text-secondary);">Diseños que hablan por sí mismos.</p>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Mockup 1: E-commerce -->
+                <div class="bento-card reveal" style="grid-column: span 2;">
+                    <div class="mockup-window">
+                        <div class="mockup-header">
+                            <div class="dots"><span></span><span></span><span></span></div>
+                            <div class="bar">shop.com</div>
+                        </div>
+                        <div class="mockup-body ecommerce">
+                            <div class="nav-mock">
+                                <div class="logo-sq"></div>
+                                <div class="nav-lines"></div>
+                                <div class="search-circle"></div>
+                            </div>
+                            <div class="hero-mock">
+                                <div class="text-block"></div>
+                                <div class="sub-text-block"></div>
+                                <div class="btn-mock"></div>
+                            </div>
+                            <div class="products-grid">
+                                <div class="prod">
+                                    <div class="prod-img shape-phone"></div>
+                                    <div class="prod-lines"></div>
+                                    <div class="price-tag"></div>
+                                </div>
+                                <div class="prod">
+                                    <div class="prod-img shape-laptop"></div>
+                                    <div class="prod-lines"></div>
+                                    <div class="price-tag"></div>
+                                </div>
+                                <div class="prod">
+                                    <div class="prod-img shape-tv"></div>
+                                    <div class="prod-lines"></div>
+                                    <div class="price-tag"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bento-info">
+                        <h3>E-Commerce High-End</h3>
+                        <p>Tiendas online ultra rápidas.</p>
+                    </div>
+                </div>
+
+                <!-- Mockup 2: Dashboard -->
+                <div class="bento-card reveal">
+                    <div class="mockup-window">
+                        <div class="mockup-header">
+                            <div class="dots"><span></span><span></span><span></span></div>
+                        </div>
+                        <div class="mockup-body dashboard">
+                            <div class="sidebar-mock">
+                                <div class="profile-circle"></div>
+                                <div class="sidebar-item active"></div>
+                                <div class="sidebar-item"></div>
+                                <div class="sidebar-item"></div>
+                            </div>
+                            <div class="content-mock">
+                                <div class="header-mock-row">
+                                    <div class="title-line"></div>
+                                    <div class="user-badge"></div>
+                                </div>
+                                <div class="chart-mock">
+                                    <div class="y-axis">
+                                        <span></span><span></span><span></span>
+                                    </div>
+                                    <div class="bar" style="height: 40%; --target-height: 40%;"></div>
+                                    <div class="bar" style="height: 70%; --target-height: 70%;"></div>
+                                    <div class="bar" style="height: 50%; --target-height: 50%;"></div>
+                                    <div class="bar" style="height: 90%; --target-height: 90%;"></div>
+                                </div>
+                                <div class="row-mock"></div>
+                                <div class="row-mock"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bento-info">
+                        <h3>SaaS Dashboards</h3>
+                        <p>Datos complejos, visualización simple.</p>
+                    </div>
+                </div>
+
+                <!-- Mockup 3: Mobile App -->
+                <div class="bento-card reveal">
+                    <div class="phone-mockup">
+                        <div class="notch"></div>
+                        <div class="screen-content">
+                            <div class="app-header">
+                                <div class="menu-icon"></div>
+                                <div class="profile-icon"></div>
+                            </div>
+                            <div class="chat-area">
+                                <div class="msg left"></div>
+                                <div class="msg right"></div>
+                                <div class="msg left short"></div>
+                            </div>
+                            <div class="fab-btn"></div>
+                            <div class="bottom-bar"></div>
+                        </div>
+                    </div>
+                    <div class="bento-info">
+                        <h3>App Nativa</h3>
+                        <p>Experiencia móvil fluida.</p>
+                    </div>
+                </div>
+
+                <!-- Mockup 4: Minimalist -->
+                <div class="bento-card reveal" style="grid-column: span 2;">
+                    <div class="mockup-window">
+                        <div class="mockup-body minimal">
+                            <div class="minimal-nav">
+                                <div class="logo-text">AGNCY.</div>
+                                <div class="menu-burger"></div>
+                            </div>
+                            <div class="huge-text">BOLD<br>DESIGN</div>
+                            <div class="minimal-grid">
+                                <div class="img-placeholder"></div>
+                                <div class="text-desc">
+                                    <div class="line"></div>
+                                    <div class="line"></div>
+                                    <div class="line short"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bento-info">
+                        <h3>Diseño Minimalista</h3>
+                        <p>Menos ruido, más impacto.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="filosofia" class="section" style="background: var(--color-bg-subtle);">
+        <div class="container">
+            <div class="reveal" style="padding: 6rem; text-align: center; max-width: 900px; margin: 0 auto;">
+                <h2 style="margin-bottom: 2rem;">Menos es <span class="text-gradient">Más</span></h2>
+                <p style="font-size: 1.5rem; color: var(--color-text-secondary); font-weight: 300;">
+                    En Velo Code, definimos nuestro propio estándar. No seguimos tendencias, las trascendemos. Creemos
+                    en la sofisticación a través de la simplicidad absoluta y la ingeniería de precisión.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="section" style="padding-bottom: 8rem;">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>¿Listo para <span class="text-gradient">Despegar</span>?</h2>
+                <p style="color: var(--color-text-secondary);">Cuéntanos sobre tu visión o hablemos directo.</p>
+            </div>
+
+            <div class="reveal glass-panel" style="max-width: 600px; margin: 0 auto; padding: 3rem;">
+                <form action="#" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <input type="text" placeholder="Nombre" class="form-input">
+                    <input type="email" placeholder="Correo Electrónico" class="form-input">
+                    <textarea placeholder="Cuéntanos brevemente sobre tu proyecto..." rows="4"
+                        class="form-input"></textarea>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Iniciar Proyecto</button>
+
+                    <div style="display: flex; align-items: center; gap: 1rem; margin: 1rem 0;">
+                        <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.1);"></div>
+                        <span style="color: var(--color-text-secondary); font-size: 0.9rem;">O</span>
+                        <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.1);"></div>
+                    </div>
+
+                    <a href="https://wa.me/584241672737" target="_blank" class="btn btn-whatsapp">
+                        <ion-icon name="logo-whatsapp" style="font-size: 1.2rem;"></ion-icon> WhatsApp Directo (+58
+                        424-1672737)
+                    </a>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Velo Code. Diseñado para el futuro.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

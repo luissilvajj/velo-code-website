@@ -1,0 +1,197 @@
+/* Enhanced Scroll Reveals */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    /* Scale down start */
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: blur(10px);
+    /* Start blurred */
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+}
+
+/* Staggered text gradient animation */
+@keyframes gradient-move {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.text-gradient {
+    background-size: 200% auto;
+    animation: gradient-move 5s ease infinite;
+}
+
+/* Float - Enhanced */
+@keyframes float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(10px, -20px) rotate(2deg);
+    }
+
+    66% {
+        transform: translate(-10px, 10px) rotate(-1deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+.floating {
+    animation: float 12s ease-in-out infinite;
+}
+
+/* 3D Geometric Element */
+.geo-3d-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    z-index: 1;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate 20s infinite linear;
+}
+
+.face {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(52, 152, 219, 0.3);
+    background: rgba(52, 152, 219, 0.05);
+    /* Default */
+}
+
+@media (prefers-color-scheme: light) {
+    .face {
+        border-color: rgba(0, 122, 255, 0.1);
+        background: rgba(0, 122, 255, 0.02);
+    }
+}
+
+.front {
+    transform: rotateY(0deg) translateZ(150px);
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(150px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(150px);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(150px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(150px);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(150px);
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+/* Mockup Internal Animations */
+@keyframes grow-bar {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: var(--target-height);
+    }
+}
+
+.chart-mock .bar {
+    animation: grow-bar 1.5s ease-out forwards;
+    transform-origin: bottom;
+}
+
+.bento-card:hover .bar {
+    animation: none;
+    /* Reset */
+    opacity: 0.8;
+}
+
+@keyframes slide-in-prod {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.prod {
+    animation: slide-in-prod 0.5s ease forwards;
+    opacity: 0;
+}
+
+.prod:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.prod:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.prod:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Magnetic Button (Structure) */
+.magnetic-btn {
+    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Hover Zoom for cards */
+.card {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05) translateY(-5px);
+    z-index: 10;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}

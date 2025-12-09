@@ -1,0 +1,64 @@
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+    /* Default: Light Mode (Apple Style) */
+    --color-bg-dark: #FFFFFF;
+    --color-bg-subtle: #F5F5F7;
+
+    /* Text */
+    --color-white: #1D1D1F;
+    /* Inverted for Light Mode: Dark Text */
+    --color-text-secondary: #86868B;
+
+    /* Accents */
+    --color-accent-blue: #007AFF;
+    --color-accent-violet: #AF52DE;
+    --color-accent-green: #34C759;
+
+    /* Gradients */
+    --gradient-logo: linear-gradient(135deg, #007AFF, #AF52DE, #34C759);
+    --gradient-text: linear-gradient(90deg, #1D1D1F, #424245);
+    --gradient-glow: radial-gradient(circle, rgba(0, 122, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+
+    /* Other Tokens */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 5rem;
+    --spacing-xl: 10rem;
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 32px;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: 1px solid rgba(0, 0, 0, 0.05);
+    --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+    --transition-fast: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-normal: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Dark Mode Override (System Preference) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg-dark: #000000;
+        --color-bg-subtle: #111111;
+
+        --color-white: #FFFFFF;
+        /* True White */
+        --color-text-secondary: #888888;
+
+        /* Neon Accents for Dark Mode */
+        --color-accent-green: #2ECC71;
+        --color-accent-blue: #3498DB;
+        --color-accent-violet: #8E44AD;
+
+        --gradient-text: linear-gradient(90deg, #FFFFFF, #999);
+        --gradient-glow: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
+
+        --glass-bg: rgba(255, 255, 255, 0.03);
+        --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+        --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    }
+}
