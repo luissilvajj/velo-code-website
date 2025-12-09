@@ -44,50 +44,80 @@
         </div>
 
         <div class="hero-visual">
-            <!-- Desktop Layer -->
+            <!-- Desktop Layer: Admin System -->
             <div class="hero-desktop glass-panel">
                 <div class="mockup-header">
                     <div class="dots"><span></span><span></span><span></span></div>
-                    <div class="bar">dashboard.app</div>
+                    <div class="bar">admin.velo.system</div>
                 </div>
-                <div class="mockup-body dashboard-body">
-                    <!-- Simplified Dashboard for Hero -->
-                    <div class="sidebar-mock">
-                        <div class="profile-circle"></div>
+                <div class="mockup-body dashboard-body" style="background: #f8fafc;">
+                    <!-- Sidebar -->
+                    <div class="sidebar-mock" style="width: 50px; border-right: 1px solid #e2e8f0;">
                         <div class="sidebar-item active"></div>
                         <div class="sidebar-item"></div>
+                        <div class="sidebar-item"></div>
+                        <div class="sidebar-item"></div>
                     </div>
-                    <div class="content-mock">
-                        <div class="header-mock-row">
-                            <div class="title-line"></div>
+                    <!-- Main Content: Data Table & Stats -->
+                    <div class="content-mock" style="padding: 15px; display: flex; flex-direction: column; gap: 10px;">
+                        <!-- Top Stats Row -->
+                        <div style="display: flex; gap: 10px;">
+                            <div class="hero-stat-card"></div>
+                            <div class="hero-stat-card"></div>
+                            <div class="hero-stat-card" style="flex: 1.5;"></div>
                         </div>
-                        <div class="chart-mock">
-                            <div class="bar" style="height: 40%; background: var(--color-accent-blue); width: 8px;">
+                        <!-- Middle: Product Table Simulation -->
+                        <div class="hero-table-mock">
+                            <div class="table-header"></div>
+                            <div class="table-row">
+                                <div class="t-col-1"></div>
+                                <div class="t-col-2"></div>
+                                <div class="t-col-3"></div>
                             </div>
-                            <div class="bar" style="height: 70%; background: var(--color-accent-blue); width: 8px;">
+                            <div class="table-row">
+                                <div class="t-col-1"></div>
+                                <div class="t-col-2"></div>
+                                <div class="t-col-3"></div>
                             </div>
-                            <div class="bar" style="height: 50%; background: var(--color-accent-green); width: 8px;">
-                            </div>
-                            <div class="bar" style="height: 85%; background: var(--color-accent-blue); width: 8px;">
+                            <div class="table-row">
+                                <div class="t-col-1"></div>
+                                <div class="t-col-2"></div>
+                                <div class="t-col-3"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Mobile Layer -->
+            <!-- Mobile Layer: Analytics App -->
             <div class="hero-mobile mobile-frame">
                 <div class="iphone-notch"></div>
-                <div class="screen-content">
-                    <div class="app-header">
+                <div class="screen-content" style="background: #fff; display: flex; flex-direction: column;">
+                    <div class="app-header" style="margin-bottom: 10px;">
                         <div class="menu-icon"></div>
                         <div class="profile-icon"></div>
                     </div>
-                    <div class="app-grid">
-                        <div class="app-widget w-1"></div>
-                        <div class="app-widget w-2"></div>
-                        <div class="app-widget w-3"></div>
-                        <div class="app-widget w-4"></div>
+                    <!-- Detailed Mobile Graph -->
+                    <div class="hero-mobile-card">
+                        <div class="mini-title">Total Revenue</div>
+                        <div class="mini-amount">$42,500</div>
+                        <div class="mini-graph">
+                            <!-- CSS Curve -->
+                            <div class="curve-line"></div>
+                        </div>
+                    </div>
+                    <!-- Recent Activity List -->
+                    <div class="hero-list-gap">
+                        <div class="hero-list-item">
+                            <div class="icon-box"></div>
+                            <div class="text-lines"><span style="width: 60%"></span><span style="width: 40%"></span>
+                            </div>
+                        </div>
+                        <div class="hero-list-item">
+                            <div class="icon-box" style="background: #e0f2fe;"></div>
+                            <div class="text-lines"><span style="width: 50%"></span><span style="width: 30%"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="home-indicator"></div>
