@@ -154,47 +154,80 @@
                 </div>
             </div>
 
-            <!-- 3. Center: Mobile App (iPhone Frame Returned) with Landing Page Style -->
+            <!-- 3. Center: Mobile App (iPhone Frame) with Dashboard Style -->
             <div class="hero-mobile mobile-frame">
                 <div class="iphone-notch"></div>
                 <div class="screen-content"
-                    style="background: #fff; display: flex; flex-direction: column; overflow: hidden;">
-                    <!-- Mobile Browser Header -->
+                    style="background: #f8fafc; display: flex; flex-direction: column; overflow: hidden; position: relative;">
+                    <!-- App Header -->
                     <div
-                        style="padding: 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f1f5f9;">
-                        <div style="width: 20px; height: 20px; background: #0f172a; border-radius: 4px;"></div>
-                        <!-- Logo -->
-                        <div style="display: flex; gap: 5px;">
-                            <div style="width: 4px; height: 4px; background: #94a3b8; border-radius: 50%;"></div>
-                            <div style="width: 4px; height: 4px; background: #94a3b8; border-radius: 50%;"></div>
+                        style="padding: 15px 15px 5px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <div style="font-size: 0.7rem; color: #64748b;">Welcome back,</div>
+                            <div style="font-size: 1rem; font-weight: 700; color: #0f172a;">Luis Silva</div>
+                        </div>
+                        <div
+                            style="width: 32px; height: 32px; background: white; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: center;">
+                            <ion-icon name="notifications-outline"
+                                style="font-size: 1.1rem; color: #64748b;"></ion-icon>
                         </div>
                     </div>
-                    <!-- Mobile Hero Section (Skeleton Landing) -->
-                    <div
-                        style="padding: 20px; flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 15px;">
-                        <div style="width: 60px; height: 6px; background: #cbd5e1; border-radius: 3px;"></div>
-                        <!-- Small Tag -->
-                        <div style="width: 80%; height: 24px; background: #0f172a; border-radius: 4px;"></div>
-                        <!-- Headline 1 -->
-                        <div style="width: 60%; height: 24px; background: #0f172a; border-radius: 4px;"></div>
-                        <!-- Headline 2 -->
-                        <div
-                            style="width: 90%; height: 8px; background: #cbd5e1; border-radius: 4px; margin-top: 10px;">
-                        </div> <!-- Body Text -->
-                        <div style="width: 70%; height: 8px; background: #cbd5e1; border-radius: 4px;"></div>
-                        <!-- Body Text -->
 
-                        <!-- Hero Image / Visual -->
+                    <!-- Scrollable Content -->
+                    <div style="padding: 15px; display: flex; flex-direction: column; gap: 15px; overflow-y: auto;">
+                        <!-- Main Balance Card -->
                         <div
-                            style="width: 100%; height: 120px; background: #f1f5f9; border-radius: 8px; margin-top: 10px; border: 1px solid #e2e8f0; position: relative; overflow: hidden;">
+                            style="background: #1e293b; border-radius: 16px; padding: 20px; color: white; box-shadow: 0 10px 20px rgba(30, 41, 59, 0.2);">
+                            <div style="font-size: 0.8rem; opacity: 0.7; margin-bottom: 5px;">Total Balance</div>
+                            <div style="font-size: 1.8rem; font-weight: 700; margin-bottom: 15px;">$24,500.00</div>
                             <div
-                                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; border-radius: 50%; border: 4px solid #cbd5e1;">
+                                style="height: 40px; width: 100%; position: relative; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <div class="curve-line" style="border-color: #38bdf8; height: 80%;"></div>
                             </div>
                         </div>
 
-                        <!-- CTA Button -->
-                        <div
-                            style="width: 120px; height: 36px; background: #3b82f6; border-radius: 18px; margin-top: auto;">
+                        <!-- Stats Grid -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <div
+                                style="background: white; padding: 12px; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                                <div
+                                    style="width: 24px; height: 24px; background: #dcfce7; border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
+                                    <ion-icon name="arrow-up" style="color: #166534; font-size: 1rem;"></ion-icon>
+                                </div>
+                                <div style="font-size: 0.7rem; color: #64748b;">Income</div>
+                                <div style="font-size: 1rem; font-weight: 700; color: #0f172a;">$8,240</div>
+                            </div>
+                            <div
+                                style="background: white; padding: 12px; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                                <div
+                                    style="width: 24px; height: 24px; background: #fee2e2; border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
+                                    <ion-icon name="arrow-down" style="color: #991b1b; font-size: 1rem;"></ion-icon>
+                                </div>
+                                <div style="font-size: 0.7rem; color: #64748b;">Expenses</div>
+                                <div style="font-size: 1rem; font-weight: 700; color: #0f172a;">$3,100</div>
+                            </div>
+                        </div>
+
+                        <!-- Recent List -->
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <div style="font-size: 0.8rem; font-weight: 600; color: #334155;">Recent Transactions</div>
+                            <div class="hero-list-item" style="padding: 0; border: none;">
+                                <div class="icon-box"><ion-icon name="logo-apple"></ion-icon></div>
+                                <div class="text-lines">
+                                    <span class="t-name">Apple Store</span>
+                                    <span class="t-date">Today, 10:23 AM</span>
+                                </div>
+                                <span class="t-price">-$120.00</span>
+                            </div>
+                            <div class="hero-list-item" style="padding: 0; border: none;">
+                                <div class="icon-box" style="background: #e0f2fe; color: #0284c7;"><ion-icon
+                                        name="cash-outline"></ion-icon></div>
+                                <div class="text-lines">
+                                    <span class="t-name">Salary</span>
+                                    <span class="t-date">Yesterday</span>
+                                </div>
+                                <span class="t-price success">+$4,200.00</span>
+                            </div>
                         </div>
                     </div>
                 </div>
