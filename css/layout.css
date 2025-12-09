@@ -99,6 +99,15 @@ nav {
     transform: translateX(-50%);
 }
 
+@media (max-width: 768px) {
+    .orb-1 {
+        width: 300px;
+        height: 300px;
+        filter: blur(80px);
+        /* Reduce blur load */
+    }
+}
+
 /* Services / Features */
 .section {
     padding: var(--spacing-xl) 0;
@@ -224,6 +233,13 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+        /* Force single column on mobile */
+    }
 }
 
 @media (min-width: 900px) {
@@ -904,7 +920,18 @@ footer {
     /* Mockups Scale */
     .mockup-window {
         height: auto;
-        min-height: 180px;
+        min-height: 200px;
+        /* Maintain decent height */
+    }
+
+    /* iPhone scaling */
+    .mobile-frame {
+        width: 140px !important;
+        /* Keep fixed width for ratio */
+        height: 280px !important;
+        /* Keep fixed height for ratio */
+        transform: scale(0.9);
+        /* Slight scale down if needed, or keep 1 */
     }
 
     /* Minimal Mockup Text */
