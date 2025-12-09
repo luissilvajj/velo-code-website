@@ -169,43 +169,49 @@
             <!-- 3. Center: Mobile App (iPhone Frame) -> MUSIC PLAYER -->
             <div class="hero-mobile mobile-frame">
                 <div class="iphone-notch"></div>
-                <div style="font-size: 1rem; font-weight: 700; color: #0f172a;">$8,240</div>
-            </div>
-            <div style="background: white; padding: 12px; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-                <div
-                    style="width: 24px; height: 24px; background: #fee2e2; border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
-                    <ion-icon name="arrow-down" style="color: #991b1b; font-size: 1rem;"></ion-icon>
-                </div>
-                <div style="font-size: 0.7rem; color: #64748b;">Expenses</div>
-                <div style="font-size: 1rem; font-weight: 700; color: #0f172a;">$3,100</div>
-            </div>
-        </div>
+                <div class="screen-content"
+                    style="background: #1e293b; display: flex; flex-direction: column; overflow: hidden; position: relative;">
+                    <!-- Album Art -->
+                    <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 20px;">
+                        <div
+                            style="width: 140px; height: 140px; background: linear-gradient(135deg, #6366f1, #a855f7); border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); position: relative;">
+                            <ion-icon name="musical-notes"
+                                style="font-size: 4rem; color: rgba(255,255,255,0.5); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></ion-icon>
+                        </div>
+                    </div>
 
-        <!-- Recent List -->
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-            <div style="font-size: 0.8rem; font-weight: 600; color: #334155;">Recent Transactions</div>
-            <div class="hero-list-item" style="padding: 0; border: none;">
-                <div class="icon-box"><ion-icon name="logo-apple"></ion-icon></div>
-                <div class="text-lines">
-                    <span class="t-name">Apple Store</span>
-                    <span class="t-date">Today, 10:23 AM</span>
+                    <!-- Player Controls -->
+                    <div
+                        style="padding: 25px; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border-top: 1px solid rgba(255,255,255,0.1);">
+                        <div style="color: white; font-size: 1.1rem; font-weight: 700; margin-bottom: 5px;">Futuro
+                            Digital</div>
+                        <div style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 20px;">Velo Code</div>
+
+                        <!-- Progress -->
+                        <div
+                            style="height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; margin-bottom: 20px; position: relative;">
+                            <div style="width: 60%; height: 100%; background: #38bdf8; border-radius: 2px;"></div>
+                            <div
+                                style="width: 12px; height: 12px; background: white; border-radius: 50%; position: absolute; left: 60%; top: 50%; transform: translate(-50%, -50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+                            </div>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div style="display: flex; justify-content: space-between; align-items: center; color: white;">
+                            <ion-icon name="shuffle-outline" style="font-size: 1.2rem; opacity: 0.7;"></ion-icon>
+                            <ion-icon name="play-skip-back" style="font-size: 1.5rem;"></ion-icon>
+                            <div
+                                style="width: 50px; height: 50px; background: #38bdf8; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(56, 189, 248, 0.4);">
+                                <ion-icon name="play"
+                                    style="font-size: 1.5rem; color: white; margin-left: 2px;"></ion-icon>
+                            </div>
+                            <ion-icon name="play-skip-forward" style="font-size: 1.5rem;"></ion-icon>
+                            <ion-icon name="repeat-outline" style="font-size: 1.2rem; opacity: 0.7;"></ion-icon>
+                        </div>
+                    </div>
                 </div>
-                <span class="t-price">-$120.00</span>
+                <div class="home-indicator"></div>
             </div>
-            <div class="hero-list-item" style="padding: 0; border: none;">
-                <div class="icon-box" style="background: #e0f2fe; color: #0284c7;"><ion-icon
-                        name="cash-outline"></ion-icon></div>
-                <div class="text-lines">
-                    <span class="t-name">Salary</span>
-                    <span class="t-date">Yesterday</span>
-                </div>
-                <span class="t-price success">+$4,200.00</span>
-            </div>
-        </div>
-        </div>
-        </div>
-        <div class="home-indicator"></div>
-        </div>
         </div>
 
     </section>
