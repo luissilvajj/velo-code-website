@@ -770,3 +770,95 @@ footer {
     font-size: 0.85rem;
     background: var(--color-bg-dark);
 }
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+
+    /* Hero */
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+
+    /* Navigation */
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Cards */
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .card,
+    .bento-card {
+        padding: 1.5rem;
+    }
+
+    /* Mockups Scale */
+    .mockup-window {
+        height: auto;
+        min-height: 180px;
+    }
+
+    /* Minimal Mockup Text */
+    .minimal .huge-text {
+        font-size: 2rem;
+    }
+
+    /* E-commerce grid */
+    .products-grid {
+        gap: 2%;
+    }
+
+    .prod {
+        width: 32%;
+        padding: 3px;
+    }
+
+    .prod-img {
+        height: 25px;
+    }
+
+    /* Shapes scale down */
+    .shape-phone::before {
+        width: 8px;
+        height: 14px;
+    }
+
+    .shape-phone::after {
+        width: 8px;
+        height: 10px;
+    }
+
+    .shape-laptop::before {
+        width: 16px;
+        height: 10px;
+    }
+
+    .shape-laptop::after {
+        width: 20px;
+    }
+
+    .shape-tv::before {
+        width: 18px;
+        height: 12px;
+    }
+
+    /* Contact Form */
+    .glass-panel {
+        padding: 1.5rem !important;
+    }
+}
