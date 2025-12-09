@@ -140,7 +140,7 @@
                         <div class="mockup-header">
                             <div class="dots"><span></span><span></span><span></span></div>
                         </div>
-                        <div class="mockup-body dashboard">
+                        <div class="mockup-body dashboard-body">
                             <div class="sidebar-mock">
                                 <div class="profile-circle"></div>
                                 <div class="sidebar-item active"></div>
@@ -152,14 +152,39 @@
                                     <div class="title-line"></div>
                                     <div class="user-badge"></div>
                                 </div>
-                                <div class="chart-mock">
-                                    <div class="y-axis">
-                                        <span></span><span></span><span></span>
+                                <div class="stats-row" style="display:flex; gap:10px; margin-bottom: 5px;">
+                                    <div class="stat-box" style="flex:1;">
+                                        <div class="stat-label"
+                                            style="height:3px; width:40%; background: #475569; margin-bottom:2px;">
+                                        </div>
+                                        <div class="stat-value" style="font-size: 8px; font-weight:700; color: #fff;">
+                                            $24,500</div>
                                     </div>
-                                    <div class="bar" style="height: 40%; --target-height: 40%;"></div>
-                                    <div class="bar" style="height: 70%; --target-height: 70%;"></div>
-                                    <div class="bar" style="height: 50%; --target-height: 50%;"></div>
-                                    <div class="bar" style="height: 90%; --target-height: 90%;"></div>
+                                    <div class="stat-box" style="flex:1;">
+                                        <div class="stat-label"
+                                            style="height:3px; width:40%; background: #475569; margin-bottom:2px;">
+                                        </div>
+                                        <div class="stat-value" style="font-size: 8px; font-weight:700; color: #fff;">
+                                            +15%</div>
+                                    </div>
+                                </div>
+                                <div class="chart-mock">
+                                    <div class="y-axis"><span></span><span></span><span></span></div>
+                                    <div class="bar"
+                                        style="height: 30%; background: var(--color-accent-blue); width: 6px; border-radius: 1px;">
+                                    </div>
+                                    <div class="bar"
+                                        style="height: 50%; background: var(--color-accent-blue); width: 6px; border-radius: 1px;">
+                                    </div>
+                                    <div class="bar"
+                                        style="height: 80%; background: var(--color-accent-green); width: 6px; border-radius: 1px;">
+                                    </div>
+                                    <div class="bar"
+                                        style="height: 45%; background: var(--color-accent-blue); width: 6px; border-radius: 1px;">
+                                    </div>
+                                    <div class="bar"
+                                        style="height: 65%; background: var(--color-accent-blue); width: 6px; border-radius: 1px;">
+                                    </div>
                                 </div>
                                 <div class="row-mock"></div>
                                 <div class="row-mock"></div>
@@ -174,8 +199,8 @@
 
                 <!-- Mockup 3: Mobile App -->
                 <div class="bento-card reveal">
-                    <div class="phone-mockup">
-                        <div class="notch"></div>
+                    <div class="mockup-window mobile-frame"> <!-- Removed mockup-header for iPhone look -->
+                        <div class="iphone-notch"></div>
                         <div class="screen-content">
                             <div class="app-header">
                                 <div class="menu-icon"></div>
@@ -186,9 +211,8 @@
                                 <div class="msg right"></div>
                                 <div class="msg left short"></div>
                             </div>
-                            <div class="fab-btn"></div>
-                            <div class="bottom-bar"></div>
                         </div>
+                        <div class="home-indicator"></div>
                     </div>
                     <div class="bento-info">
                         <h3>App Nativa</h3>
