@@ -84,7 +84,9 @@ img {
 
 .btn-primary {
     background: var(--color-white);
-    color: var(--color-bg-dark);
+    /* Light Mode: Black | Dark Mode: White */
+    color: var(--color-text-inverse);
+    /* Light Mode: White | Dark Mode: Black */
     border: 1px solid var(--color-white);
 }
 

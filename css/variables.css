@@ -31,6 +31,8 @@
     /* Gradients */
     --gradient-logo: linear-gradient(135deg, #0071E3, #8944AB);
     --gradient-text: linear-gradient(90deg, #1D1D1F, #434344);
+    --gradient-hero: radial-gradient(circle at 50% 50%, #FFFFFF 0%, #F0F2F5 70%);
+    /* Light Hero */
     --gradient-glow: radial-gradient(circle, rgba(0, 113, 227, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
 
     /* Other Tokens */
@@ -86,6 +88,8 @@
 
         /* Gradients */
         --gradient-text: linear-gradient(90deg, #FFFFFF, #B0B0B0);
+        --gradient-hero: radial-gradient(circle at 50% 50%, #1c1c1e 0%, #000000 70%);
+        /* Dark Hero */
         --gradient-glow: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
 
         --glass-bg: rgba(28, 28, 30, 0.6);
