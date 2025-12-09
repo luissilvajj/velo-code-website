@@ -435,6 +435,47 @@ nav {
     transform: translateY(100px) scale(0.8) opacity(0);
 }
 
+/* Industry Ticker (Text Marquee) */
+.industry-ticker {
+    width: 100%;
+    padding: 1.5rem 0;
+    background: var(--color-bg-dark);
+    /* Contrast background */
+    border-top: 1px solid var(--color-border-subtle);
+    border-bottom: 1px solid var(--color-border-subtle);
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+}
+
+.industry-track {
+    display: flex;
+    gap: 3rem;
+    animation: scroll 40s linear infinite;
+    min-width: 100%;
+}
+
+.industry-item {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    /* Spacing between items and separator */
+}
+
+.industry-item::after {
+    content: "•";
+    color: var(--color-accent-blue);
+    font-size: 1.5rem;
+    line-height: 0;
+}
+
 /* Tablet Override */
 .hero-tablet .dashboard-body {
     display: block;
