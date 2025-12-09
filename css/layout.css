@@ -56,9 +56,12 @@ nav {
     /* Dynamic Gradient */
 }
 
-z-index: 2;
-position: relative;
-/* Ensure text sits above if needed */
+/* Hero Content */
+.hero-content {
+    max-width: 800px;
+    z-index: 2;
+    position: relative;
+    /* Ensure text sits above if needed */
 }
 
 /* Hero Split Layout */
