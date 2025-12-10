@@ -1550,11 +1550,16 @@ footer {
 
     html {
         width: 100%;
-        overflow-x: hidden;
+        height: 100%;
+        overflow: hidden;
+        /* Strict no-scroll on root */
     }
 
     body {
         width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        /* Sole scroller */
         overflow-x: hidden;
         position: relative;
         -webkit-overflow-scrolling: touch;
@@ -1617,34 +1622,62 @@ footer {
         margin: 0 auto;
     }
 
-    /* Mobile Hero Visual */
+    /* Mobile Hero Visual - Vertical Stack */
     .hero-visual {
         position: relative;
         width: 100%;
-        transform: scale(0.5);
-        /* Slightly bigger than 0.45 */
+        height: auto;
+        /* Allow growth */
+        display: flex;
+        /* Flex stack */
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 20px;
+        padding-bottom: 40px;
+        transform: scale(0.65);
+        /* Uniform scale */
         transform-origin: top center;
-        height: 280px;
-        /* More space */
-        margin: 0;
-        margin-top: -10px;
-        display: block;
     }
 
-    /* Fan out mockups on mobile */
-    .hero-desktop {
-        transform: translateX(-40px) rotateY(5deg) scale(0.95);
-        z-index: 1;
+    /* Reset all absolute positioning for stack */
+    .hero-desktop,
+    .hero-tablet,
+    .hero-mobile {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        margin: 0 !important;
+        transform: none !important;
+        /* Reset rotations */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Vertical Order: Phone -> Tablet -> Desktop */
+    .hero-mobile {
+        order: 1;
+        z-index: 10;
+        /* Re-apply scale or style if needed, but transform: none resets it. 
+           Mobile frame might be small, let's check size. 
+           Usually it has width: 280-300px. */
     }
 
     .hero-tablet {
-        transform: translateX(40px) rotateY(-5deg) scale(0.95);
-        z-index: 2;
+        order: 2;
+        z-index: 5;
+        width: 100%;
+        /* Ensure it fits container */
+        max-width: 380px;
     }
 
-    .hero-mobile {
-        z-index: 10;
-        /* Default float animation continues */
+    .hero-desktop {
+        order: 3;
+        z-index: 1;
+        width: 100%;
+        max-width: 500px;
+        /* Constrain width */
     }
 
     /* Philosophy - Make it wider on mobile */
