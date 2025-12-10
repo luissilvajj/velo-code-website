@@ -1591,28 +1591,61 @@ footer {
 
     /* Hero */
     /* Hero & Page Hero Fixes */
+    /* Hero & Page Hero Fixes */
     .hero,
     .page-hero {
         padding-top: 140px;
-        /* Clear fixed header */
         min-height: auto;
-        /* Allow content to dictate height */
+        display: flex;
+        flex-direction: column;
+        /* Stack vertically */
+        align-items: center;
+        text-align: center;
+        /* Center everything */
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 1rem;
+        /* Add side padding */
+        margin-bottom: 2rem;
+        /* Gap before mockup */
     }
 
     .hero h1 {
-        font-size: 2.2rem;
-        word-wrap: break-word;
+        font-size: 2.5rem;
+        /* Good size */
+        line-height: 1.1;
+        /* Tight line height */
+        word-wrap: normal;
+        /* Don't break words */
+        word-break: normal;
+        margin-bottom: 1rem;
+        /* Space for paragraph */
+    }
+
+    .hero p {
+        width: 100%;
+        max-width: 100%;
+        /* Ensure full width */
+        margin: 0 auto;
     }
 
     /* Mobile Hero Visual */
     .hero-visual {
+        position: relative;
+        /* Normal flow */
+        width: 100%;
         transform: scale(0.45);
         transform-origin: top center;
         height: 250px;
-        /* Reduced space */
-        margin-top: -10px;
-        margin-bottom: -50px;
-        /* Correct gap */
+        margin: 0;
+        /* Reset margins */
+        margin-top: -20px;
+        /* Pull up slightly if needed due to scale */
+        display: block;
+        /* Ensure visible */
     }
 
     /* Philosophy - Make it wider on mobile */
