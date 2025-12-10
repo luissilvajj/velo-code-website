@@ -1807,6 +1807,8 @@ footer {
     .process-visual {
         overflow: hidden;
         /* Ensure no scroll triggers */
+        padding-bottom: 20px;
+        /* Space for labels */
     }
 
     .process-track {
@@ -1814,8 +1816,8 @@ footer {
         transform-origin: center;
         width: 185%;
         /* Compensate for scale down */
-        margin-left: -42.5%;
-        /* Center the scaled element */
+        margin-left: -40%;
+        /* Shifted right (was -42.5%) to show Idea circle */
     }
 
     /* Mobile Header Optimization */
