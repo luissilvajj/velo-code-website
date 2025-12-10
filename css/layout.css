@@ -98,7 +98,6 @@ nav {
     /* Much wider for 3 items */
     height: 500px;
     /* Taller */
-    display: none;
     margin: 0 auto;
     perspective: 1000px;
     z-index: 1;
@@ -1603,6 +1602,17 @@ footer {
     .hero h1 {
         font-size: 2.2rem;
         word-wrap: break-word;
+    }
+
+    /* Mobile Hero Visual */
+    .hero-visual {
+        transform: scale(0.45);
+        transform-origin: top center;
+        height: 250px;
+        /* Reduced space */
+        margin-top: -10px;
+        margin-bottom: -50px;
+        /* Correct gap */
     }
 
     /* Philosophy - Make it wider on mobile */
