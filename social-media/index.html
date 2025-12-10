@@ -186,18 +186,14 @@
             line-height: 1;
         }
 
-        .service-icon-area {
-            font-size: 200px;
-            color: #22c55e;
-            margin: 80px 0;
-            display: flex;
-            justify-content: center;
-        }
+        /* Removed Icon Area for cleaner look as requested */
 
         .service-desc {
             font-size: 50px;
             color: #cbd5e1;
             line-height: 1.4;
+            max-width: 90%;
+            margin-top: 40px;
         }
 
         .footer-brand {
@@ -206,6 +202,7 @@
             justify-content: flex-end;
             align-items: center;
             gap: 20px;
+            padding-top: 40px;
         }
 
         .footer-logo {
@@ -241,15 +238,17 @@
 
     <div class="controls">
         <div class="header">
-            <h1 style="font-size: 1.5rem; color: #fff;">Velo Studio 🎨</h1>
-            <p style="color: #64748b; font-size: 0.9rem;">Generador de Assets</p>
+            <h1 style="font-size: 1.5rem; color: #fff;">Velo Studio</h1>
+            <p style="color: #64748b; font-size: 0.9rem;">Content Generator</p>
         </div>
 
         <div class="control-group">
             <h3>Plantilla</h3>
-            <div class="bg-option" onclick="loadTemplate('logo')">💎 Logo Brand</div>
-            <div class="bg-option" onclick="loadTemplate('welcome')">👋 Bienvenida</div>
-            <div class="bg-option" onclick="loadTemplate('service')">🛠️ Servicios</div>
+            <div class="bg-option" onclick="loadTemplate('logo')">Logo Brand</div>
+            <div class="bg-option" onclick="loadTemplate('welcome')">Bienvenida</div>
+            <div class="bg-option" onclick="loadTemplate('web')">Servicio: Web</div>
+            <div class="bg-option" onclick="loadTemplate('shop')">Servicio: E-Commerce</div>
+            <div class="bg-option" onclick="loadTemplate('apps')">Servicio: Apps</div>
         </div>
 
         <div class="control-group">
@@ -261,7 +260,7 @@
         </div>
 
         <div class="control-group">
-            <button class="btn-download" onclick="downloadAsset()">⬇️ Descargar PNG</button>
+            <button class="btn-download" onclick="downloadAsset()">Descargar PNG</button>
         </div>
     </div>
 
@@ -272,7 +271,7 @@
     </div>
 
     <script>
-        // Templates Data
+        // Templates Data - Official Website Content
         const templates = {
             logo: `
                 <div class="logo-container">
@@ -283,8 +282,8 @@
             welcome: `
                 <div class="post-welcome">
                     <div style="flex:1;"></div>
-                    <div class="welcome-title">CONSTRUIMOS<br>EL FUTURO.</div>
-                    <div class="welcome-subtitle">Desarrollo Web High-End</div>
+                    <div class="welcome-title">CONSTRUIMOS<br>EL FUTURO<br>DIGITAL.</div>
+                    <div class="welcome-subtitle">Software & Diseño High-End</div>
                     <div style="flex:1;"></div>
                     <div class="footer-brand">
                         <div class="footer-logo">velo code</div>
@@ -292,22 +291,52 @@
                     </div>
                 </div>
             `,
-            service: `
+            web: `
                 <div class="post-service">
                     <div class="service-header">
-                        <div class="service-label">Nuestros Servicios</div>
-                        <div class="service-title">Desarrollo<br>A Medida</div>
-                    </div>
-                    
-                    <div class="service-icon-area">
-                        🚀
+                        <div class="service-label">Servicios</div>
+                        <div class="service-title">Páginas Web<br>Profesionales</div>
                     </div>
                     
                     <div class="service-desc">
-                        Sitios web ultra-rápidos y aplicaciones que escalan con tu negocio.
+                        Tu vitrina al mundo. Diseñamos sitios visualmente impactantes que capturan la esencia de tu marca.
                     </div>
                     
-                     <div class="footer-brand" style="margin-top: 60px;">
+                     <div class="footer-brand" style="margin-top: auto;">
+                        <div class="footer-logo">velo code</div>
+                        <div class="footer-dot"></div>
+                    </div>
+                </div>
+            `,
+            shop: `
+                <div class="post-service">
+                    <div class="service-header">
+                        <div class="service-label">Servicios</div>
+                        <div class="service-title">E-Commerce<br>High-End</div>
+                    </div>
+                    
+                    <div class="service-desc">
+                        Vende 24/7. Tiendas online optimizadas y catálogos digitales fáciles de gestionar.
+                    </div>
+                    
+                     <div class="footer-brand" style="margin-top: auto;">
+                        <div class="footer-logo">velo code</div>
+                        <div class="footer-dot"></div>
+                    </div>
+                </div>
+            `,
+            apps: `
+                <div class="post-service">
+                    <div class="service-header">
+                        <div class="service-label">Servicios</div>
+                        <div class="service-title">Proyectos<br>a Medida</div>
+                    </div>
+                    
+                    <div class="service-desc">
+                        ¿Tienes una idea única? Desarrollamos la solución tecnológica exacta que tu negocio necesita.
+                    </div>
+                    
+                     <div class="footer-brand" style="margin-top: auto;">
                         <div class="footer-logo">velo code</div>
                         <div class="footer-dot"></div>
                     </div>
