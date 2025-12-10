@@ -1548,24 +1548,23 @@ footer {
 /* Mobile Optimization */
 @media (max-width: 768px) {
 
-    html,
+    html {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
     body {
         width: 100%;
         overflow-x: hidden;
-        overflow-y: auto;
-        /* Ensure vertical scroll is always available */
         position: relative;
         -webkit-overflow-scrolling: touch;
-        /* Smooth scroll on iOS */
     }
 
     /* Global Container Fix */
     .container {
         width: 100%;
         padding: 0 20px;
-        /* Standardize padding */
         box-sizing: border-box;
-        /* Include padding in width */
     }
 
     /* Prevent Bento Grid Overflow */
@@ -1577,20 +1576,15 @@ footer {
 
     .bento-card {
         width: 100%;
-        /* Ensure it fits */
         box-sizing: border-box;
     }
 
     /* Global Container Fix */
     .container {
         padding: 0 1.5rem;
-        /* Ensure breathing room on edges */
         overflow-x: hidden;
-        /* Prevent horizontal scroll triggers */
     }
 
-    /* Hero */
-    /* Hero & Page Hero Fixes */
     /* Hero & Page Hero Fixes */
     .hero,
     .page-hero {
@@ -1598,54 +1592,59 @@ footer {
         min-height: auto;
         display: flex;
         flex-direction: column;
-        /* Stack vertically */
         align-items: center;
         text-align: center;
-        /* Center everything */
     }
 
     .hero-content {
         width: 100%;
         max-width: 100%;
         padding: 0 1rem;
-        /* Add side padding */
         margin-bottom: 2rem;
-        /* Gap before mockup */
     }
 
     .hero h1 {
         font-size: 2.5rem;
-        /* Good size */
         line-height: 1.1;
-        /* Tight line height */
         word-wrap: normal;
-        /* Don't break words */
         word-break: normal;
         margin-bottom: 1rem;
-        /* Space for paragraph */
     }
 
     .hero p {
         width: 100%;
         max-width: 100%;
-        /* Ensure full width */
         margin: 0 auto;
     }
 
     /* Mobile Hero Visual */
     .hero-visual {
         position: relative;
-        /* Normal flow */
         width: 100%;
-        transform: scale(0.45);
+        transform: scale(0.5);
+        /* Slightly bigger than 0.45 */
         transform-origin: top center;
-        height: 250px;
+        height: 280px;
+        /* More space */
         margin: 0;
-        /* Reset margins */
-        margin-top: -20px;
-        /* Pull up slightly if needed due to scale */
+        margin-top: -10px;
         display: block;
-        /* Ensure visible */
+    }
+
+    /* Fan out mockups on mobile */
+    .hero-desktop {
+        transform: translateX(-40px) rotateY(5deg) scale(0.95);
+        z-index: 1;
+    }
+
+    .hero-tablet {
+        transform: translateX(40px) rotateY(-5deg) scale(0.95);
+        z-index: 2;
+    }
+
+    .hero-mobile {
+        z-index: 10;
+        /* Default float animation continues */
     }
 
     /* Philosophy - Make it wider on mobile */
