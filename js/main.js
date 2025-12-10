@@ -10,6 +10,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+
+            // Toggle icon shape (optional logic, keeping simple for now)
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Close when clicking outside (on the body? no, overlay would be better but this is simple starer)
+    }
+
     // Scroll Reveal Animation
     const revealElements = document.querySelectorAll('.reveal');
 
