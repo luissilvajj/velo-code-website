@@ -94,17 +94,24 @@
         /* Content Styling */
         .logo-container {
             text-align: center;
-            transform: scale(3);
-            /* Make it HUGE for the post */
+            /* Remove scale transform, use direct sizes for better control */
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .logo-text {
             font-family: 'Outfit', sans-serif;
-            font-weight: 700;
+            font-weight: 800;
+            /* Extra bold */
             color: #fff;
-            letter-spacing: -1px;
-            font-size: 4rem;
-            /* Base size */
+            letter-spacing: -4px;
+            font-size: 180px;
+            /* Big but fits in 1080 */
+            line-height: 1;
+            margin-bottom: 20px;
         }
 
         .accent-dot {
@@ -113,10 +120,11 @@
 
         .tagline {
             color: #94a3b8;
-            font-size: 1.2rem;
-            font-weight: 400;
-            margin-top: 0.5rem;
-            letter-spacing: 2px;
+            font-size: 40px;
+            /* Proportional */
+            font-weight: 500;
+            letter-spacing: 12px;
+            /* Wide spacing */
             text-transform: uppercase;
         }
 
