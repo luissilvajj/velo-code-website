@@ -1710,6 +1710,32 @@ footer {
     .glass-panel {
         padding: 1.5rem !important;
     }
+
+    /* Mobile Process Visual Fix */
+    .process-visual {
+        overflow: hidden;
+        /* Ensure no scroll triggers */
+    }
+
+    .process-track {
+        transform: scale(0.55);
+        transform-origin: center;
+        width: 185%;
+        /* Compensate for scale down */
+        margin-left: -42.5%;
+        /* Center the scaled element */
+    }
+
+    /* Mobile Header Optimization */
+    .logo div {
+        display: none;
+        /* Hide tagline on mobile completely for space */
+    }
+
+    nav {
+        padding: 0.8rem 0;
+        /* Default smaller padding */
+    }
 }
 
 /* Enforce Uniform Animation Speed */
@@ -1723,4 +1749,27 @@ body {
     height: auto !important;
     overflow-y: visible !important;
     overflow-x: hidden !important;
+}
+
+/* Header Scrolled State */
+header {
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    background: rgba(15, 23, 42, 0.98);
+    /* Almost solid dark */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 0;
+    /* Removing extra padding from header container if any */
+}
+
+header.scrolled nav {
+    padding: 0.5rem 0;
+    /* Shrink nav */
+}
+
+header.scrolled .logo {
+    transform: scale(0.9);
+    /* Shrink logo slightly */
 }
