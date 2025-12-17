@@ -1881,9 +1881,11 @@ header {
 }
 
 header.scrolled {
-    background: rgba(15, 23, 42, 0.98);
-    /* Almost solid dark */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    background: var(--glass-bg);
+    /* Adaptive Glass */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     padding: 0;
     /* Removing extra padding from header container if any */
 }

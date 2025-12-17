@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             // Redirect to WhatsApp (Replace number with actual)
-            const phoneNumber = "584120534267"; // Placeholder
+            const phoneNumber = "584241672737"; // Placeholder
             window.open(`https://wa.me/${phoneNumber}?text=${messageBody}`, '_blank');
         });
     });

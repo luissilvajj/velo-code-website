@@ -4,9 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velo Code Studio - Asset Generator</title>
-
-    <!-- Fonts -->
+    <title>Social Assets Generator | Velo Code</title>
+    <!-- Import Main Site Styles for Mockups -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
@@ -22,73 +27,132 @@
         body {
             background: #0f172a;
             display: flex;
+            flex-direction: column;
+            /* Change to column for scrolling page */
             height: 100vh;
             overflow: hidden;
+            /* Main scroll handled by content area */
             font-family: 'Outfit', sans-serif;
         }
 
-        /* Sidebar Controls */
-        .controls {
-            width: 300px;
+        /* Top Bar */
+        .top-bar {
             background: rgba(15, 23, 42, 0.95);
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
             display: flex;
-            flex-direction: column;
-            gap: 2rem;
+            justify-content: space-between;
+            align-items: center;
             z-index: 10;
         }
 
-        .control-group h3 {
+        .brand h1 {
+            font-size: 1.5rem;
             color: #fff;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 0.5rem;
+            margin: 0;
+        }
+
+        .brand p {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .global-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-action {
+            background: #334155;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .btn-action:hover {
+            background: #475569;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0071e3, #22c55e);
+            border: none;
+            font-weight: 600;
+        }
+
+        /* Gallery Area */
+        .gallery-area {
+            flex: 1;
+            overflow-y: auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .post-card {
+            background: #1e293b;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-header {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            font-weight: 500;
+        }
+
+        .canvas-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 100%;
+            /* 1:1 Aspect Ratio */
+            background: #000;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        /* The Actual Canvas Element (scaled to fit wrapper) */
+        .render-target {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1080px;
+            height: 1080px;
+            transform-origin: top left;
+            /* Scale will be set by JS */
+        }
+
+        .card-footer {
+            padding: 1rem;
+            display: flex;
+            gap: 0.5rem;
         }
 
         .btn-download {
-            background: linear-gradient(135deg, #0071e3, #22c55e);
+            flex: 1;
+            background: #22c55e;
             color: white;
             border: none;
-            padding: 1rem;
-            border-radius: 8px;
+            padding: 0.8rem;
+            border-radius: 6px;
             font-weight: 600;
-            font-size: 1rem;
             cursor: pointer;
-            transition: transform 0.2s;
-            width: 100%;
         }
 
         .btn-download:hover {
-            transform: scale(1.02);
-        }
-
-        /* Canvas Area */
-        .canvas-area {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #000;
-            overflow: auto;
-            padding: 2rem;
-        }
-
-        /* The 1080x1080 Asset */
-        #asset-canvas {
-            width: 1080px;
-            height: 1080px;
-            background: #000;
-            position: relative;
-            box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            transform: scale(0.6);
-            /* Scale for view only */
-            transform-origin: center;
+            background: #16a34a;
         }
 
         /* Content Styling */
@@ -100,6 +164,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            height: 100%;
         }
 
         .logo-text {
@@ -229,50 +294,121 @@
 
 <body>
 
-    <div class="controls">
-        <div class="header">
-            <h1 style="font-size: 1.5rem; color: #fff;">Velo Studio</h1>
-            <p style="color: #64748b; font-size: 0.9rem;">Content Generator</p>
+    <div class="top-bar">
+        <div class="brand">
+            <h1>Velo Studio 🎨</h1>
+            <p>Generador de Contenido</p>
         </div>
-
-        <div class="control-group">
-            <h3>Plantilla</h3>
-            <div class="bg-option" onclick="loadTemplate('logo')">Logo Brand</div>
-            <div class="bg-option" onclick="loadTemplate('welcome')">Bienvenida</div>
-            <div class="bg-option" onclick="loadTemplate('web')">Servicio: Web</div>
-            <div class="bg-option" onclick="loadTemplate('shop')">Servicio: E-Commerce</div>
-            <div class="bg-option" onclick="loadTemplate('apps')">Servicio: Apps</div>
-        </div>
-
-        <div class="control-group">
-            <h3>Fondo</h3>
-            <div class="bg-option" onclick="changeBg('#000')">Negro (Solid)</div>
-            <div class="bg-option" onclick="changeBg('linear-gradient(135deg, #0f172a 0%, #000 100%)')">Gradiente Dark
-            </div>
-            <div class="bg-option" onclick="changeBg('transparent')">Transparente (PNG)</div>
-        </div>
-
-        <div class="control-group">
-            <button class="btn-download" onclick="downloadAsset()">Descargar PNG</button>
+        <div class="global-actions">
+            <button class="btn-action" onclick="setGlobalBg('#000')">Fondo Negro</button>
+            <button class="btn-action" onclick="setGlobalBg('linear-gradient(135deg, #0f172a 0%, #000 100%)')">Fondo
+                Gradiente</button>
         </div>
     </div>
 
-    <div class="canvas-area">
-        <div id="asset-canvas">
-            <!-- Content Injected via JS -->
-        </div>
+    <div class="gallery-area" id="gallery">
+        <!-- Cards Injected Here -->
     </div>
 
     <script>
-        // Templates Data - Official Website Content
+        // Official Site Content
+        const content = {
+            tech: ['React', 'Node.js', 'Python', 'AWS', 'Vercel', 'TypeScript', 'Docker', 'Firebase'],
+            whyUs: [
+                {
+                    title: 'Mentalidad Emprendedora',
+                    body: 'Construimos para escalar tu negocio.',
+                    visual: `<div style="width: 120px; height: 120px; border: 2px solid #334155; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative;"><div style="width: 140px; height: 2px; background: #22c55e; position: absolute; transform: rotate(-45deg);"></div><div style="width: 10px; height: 10px; background: white; border-radius: 50%; position: absolute; top:0; right: 28px;"></div></div>`
+                },
+                {
+                    title: 'Stack de Vanguardia',
+                    body: 'React, Node, AWS. Tecnología de elite.',
+                    visual: `<div style="display: flex; gap: 10px;"><div style="width: 60px; height: 60px; background: #334155; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px;">⚛️</div><div style="width: 60px; height: 60px; background: #334155; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px;">🟢</div></div>`
+                },
+                {
+                    title: 'Socios, No Proveedores',
+                    body: 'Nos obsesiona tu crecimiento.',
+                    visual: `<div style="display: flex; align-items: center; gap: -20px;"><div style="width: 80px; height: 80px; background: #1e293b; border: 2px solid #334155; border-radius: 50%; z-index: 1;"></div><div style="width: 80px; height: 80px; background: #22c55e; border: 2px solid #1e293b; border-radius: 50%; margin-left: -30px; z-index: 2;"></div></div>`
+                },
+                {
+                    title: 'Escalabilidad Real',
+                    body: 'Código listo para millones de usuarios.',
+                    visual: `<div style="display: flex; align-items: flex-end; gap: 8px; height: 80px;"><div style="width: 15px; height: 30%; background: #334155;"></div><div style="width: 15px; height: 50%; background: #334155;"></div><div style="width: 15px; height: 75%; background: #334155;"></div><div style="width: 15px; height: 100%; background: #22c55e; box-shadow: 0 0 15px rgba(34, 197, 94, 0.5);"></div></div>`
+                }
+            ],
+            services: [
+                {
+                    title: 'Desarrollo Web',
+                    body: 'Tu vitrina al mundo. UI/UX Premium.',
+                    visual: `
+                    <div style="background: #1e293b; padding: 25px; border-radius: 16px; border: 1px solid #334155; font-family: monospace; font-size: 16px; width: 100%; max-width: 400px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+                        <div style="display:flex; gap:8px; margin-bottom:20px; opacity: 0.7;"><div style="width:12px; height:12px; border-radius:50%; background:#ef4444"></div><div style="width:12px; height:12px; border-radius:50%; background:#eab308"></div><div style="width:12px; height:12px; border-radius:50%; background:#22c55e"></div></div>
+                        <div style="color:#bfdbfe; line-height: 1.6;">&lt;div <span style="color:#7dd3fc">class</span>="hero"&gt;</div>
+                        <div style="color:#bfdbfe; padding-left:25px; line-height: 1.6;">&lt;h1&gt;Digital&lt;/h1&gt;</div>
+                        <div style="color:#bfdbfe; line-height: 1.6;">&lt;/div&gt;</div>
+                    </div>`
+                },
+                {
+                    title: 'E-Commerce',
+                    body: 'Vende 24/7. Pasarelas de pago y gestión total.',
+                    visual: `
+                    <div style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 20px; width: 100%; max-width: 400px; backdrop-filter: blur(10px);">
+                        <div style="min-width: 60px; height: 60px; background: #334155; border-radius: 12px; display: flex; align-items: center; justify-content: center;"><ion-icon name="shirt-outline" style="font-size: 24px; color: #94a3b8;"></ion-icon></div>
+                        <div style="flex:1">
+                            <div style="height: 10px; width: 60%; background: #475569; border-radius: 5px; margin-bottom: 8px;"></div>
+                            <div style="height: 10px; width: 30%; background: #22c55e; border-radius: 5px;"></div>
+                        </div>
+                        <div style="padding: 10px 20px; background: #22c55e; color: white; border-radius: 8px; font-size: 14px; font-weight: bold; box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3);">$ Buy</div>
+                    </div>`
+                },
+                {
+                    title: 'Apps Móviles',
+                    body: 'iOS y Android. Experiencias nativas fluidas.',
+                    visual: `
+                    <div style="background: rgba(255,255,255,0.95); color: #0f172a; padding: 20px; border-radius: 16px; display: flex; align-items: center; gap: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); width: 100%; max-width: 400px;">
+                        <div style="min-width: 50px; height: 50px; background: #3b82f6; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;"><ion-icon name="notifications-outline"></ion-icon></div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 16px;">Nueva Orden</div>
+                            <div style="font-size: 14px; color: #64748b;">Recibiste $450.00 USD</div>
+                        </div>
+                    </div>`
+                },
+                {
+                    title: 'Software SaaS',
+                    body: 'Automatización y plataformas a medida.',
+                    visual: `
+                    <div style="display: flex; gap: 15px; width: 100%; max-width: 400px; position: relative;">
+                         <div style="position: absolute; top: -20px; right: -20px; background: #22c55e; padding: 5px 10px; border-radius: 6px; font-size: 12px; font-weight: bold; color: white;">LIVE</div>
+                         <div style="flex: 1; height: 100px; background: #1e293b; border: 1px solid #334155; border-radius: 12px; display: flex; align-items: center; justify-content: center;"><ion-icon name="server-outline" style="font-size: 30px; color: #475569;"></ion-icon></div>
+                         <div style="flex: 1; height: 100px; background: #1e293b; border: 1px solid #334155; border-radius: 12px; display: flex; align-items: center; justify-content: center;"><ion-icon name="cloud-done-outline" style="font-size: 30px; color: #22c55e;"></ion-icon></div>
+                         <div style="flex: 1; height: 100px; background: #1e293b; border: 1px solid #334155; border-radius: 12px; display: flex; align-items: center; justify-content: center;"><ion-icon name="settings-outline" style="font-size: 30px; color: #475569;"></ion-icon></div>
+                    </div>`
+                }
+            ],
+            values: [
+                { title: 'Innovación', body: 'Tecnología relevante que marca diferencia.' },
+                { title: 'Calidad', body: 'Estética que vende desde el primer click.' },
+                { title: 'Resultados', body: 'Métricas reales, no solo código.' }
+            ]
+        };
+
         const templates = {
-            logo: `
+            // --- SINGLE POSTS ---
+            logo: {
+                name: "Brand: Logo Oficial",
+                type: 'single',
+                caption: "Identidad Velo Code.\n\nDigital Future.\n\n#VeloCode #Brand #Identity",
+                html: `
                 <div class="logo-container">
-                    <div class="logo-text">velo code<span class="accent-dot">.</span></div>
+                    <div class="logo-text">velo code<span class="accent-dot" style="color:#22c55e">.</span></div>
                     <div class="tagline">Digital Future</div>
-                </div>
-            `,
-            welcome: `
+                </div>`
+            },
+            welcome: {
+                name: "Brand: Bienvenida",
+                type: 'single',
+                caption: "Construimos el Futuro Digital.\n\nSoftware y Diseño High-End para empresas que buscan escalar.\n\n#VeloCode #SoftwareStudio #DigitalFuture",
+                html: `
                 <div class="post-welcome">
                     <div style="flex:1;"></div>
                     <div class="welcome-title">CONSTRUIMOS<br>EL FUTURO<br>DIGITAL.</div>
@@ -281,89 +417,356 @@
                     <div class="footer-brand">
                         <div class="footer-logo">velo code<span style="color:#22c55e">.</span></div>
                     </div>
-                </div>
-            `,
-            web: `
+                </div>`
+            },
+            tech_stack: {
+                name: "Tech: Stack Arsenal",
+                type: 'single',
+                caption: "Infraestructura técnica de Velo Code.\n\nUtilizamos un stack moderno compuesto por React y Node.js para el desarrollo principal, AWS para la infraestructura en la nube y Python para el procesamiento de datos.\n\nNuestra elección tecnológica prioriza la escalabilidad, la seguridad y el rendimiento a largo plazo de cada proyecto.\n\n#VeloCode #DesarrolloWeb #IngenieriaSoftware #React #NodeJS #AWS",
+                html: `
                 <div class="post-service">
                     <div class="service-header">
-                        <div class="service-label">Servicios</div>
-                        <div class="service-title">Páginas Web<br>Profesionales</div>
+                        <div class="service-label">Tecnología</div>
+                        <div class="service-title">Nuestro<br>Arsenal</div>
                     </div>
-                    
-                    <div class="service-desc">
-                        Tu vitrina al mundo. Diseñamos sitios visualmente impactantes que capturan la esencia de tu marca.
+                    <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 40px;">
+                        ${content.tech.map(t => `<div style="font-size: 40px; color: #cbd5e1; border: 1px solid #334155; padding: 20px; border-radius: 12px;">${t}</div>`).join('')}
                     </div>
-                    
-                     <div class="footer-brand" style="margin-top: auto;">
+                     <div class="footer-brand">
                         <div class="footer-logo">velo code<span style="color:#22c55e">.</span></div>
                     </div>
-                </div>
-            `,
-            shop: `
-                <div class="post-service">
-                    <div class="service-header">
-                        <div class="service-label">Servicios</div>
-                        <div class="service-title">E-Commerce<br>High-End</div>
+                </div>`
+            },
+
+            // --- CAROUSELS ---
+            carousel_services: {
+                name: "Carousel: Servicios (Set Completo)",
+                type: 'carousel',
+                caption: "Soluciones digitales integrales.\n\nCubrimos las etapas críticas del desarrollo tecnológico para empresas:\n\n1. Desarrollo Web: Sitios corporativos optimizados para conversión y posicionamiento.\n2. E-Commerce: Plataformas de venta robustas con gestión de inventario y pasarelas de pago.\n3. Apps Móviles: Aplicaciones nativas para iOS y Android centradas en la experiencia de usuario.\n4. SaaS: Software a medida para la automatización de procesos operativos.\n\nConsultoría y desarrollo para escalar negocios digitales.\n\n#VeloCode #Servicios #Software #Ecommerce #Apps",
+                slides: content.services.map((s, i) => `
+                    <div class="post-service">
+                        <div class="service-header">
+                            <div class="service-label">0${i + 1} — Servicios</div>
+                            <div class="service-title" style="font-size: 90px;">${s.title}</div>
+                        </div>
+                        
+                        <!-- Visual Element Area -->
+                        <div style="height: 200px; display: flex; align-items: center; justify-content: flex-start; margin: 40px 0;">
+                            ${s.visual ? s.visual : ''}
+                        </div>
+
+                        <div class="service-desc">${s.body}</div>
+                        <div class="footer-brand">
+                            <div class="footer-logo">velo code<span style="color:#22c55e">.</span></div>
+                        </div>
+                    </div>
+                `)
+            },
+            carousel_why: {
+                name: "Carousel: Por Qué Nosotros",
+                type: 'carousel',
+                caption: "Filosofía de trabajo Velo Code.\n\nNos diferenciamos por un enfoque técnico y estratégico:\n\n* Mentalidad de Negocio: Entendemos que el software es una herramienta para el crecimiento comercial.\n* Calidad de Código: Estándares de ingeniería que aseguran estabilidad y facilidad de mantenimiento.\n* Escalabilidad: Arquitecturas diseñadas para soportar el crecimiento de usuarios y datos sin deuda técnica.\n* Partnership: Trabajamos como un equipo extendido, alineados con los objetivos de la empresa.\n\nDesarrollo profesional para proyectos exigentes.\n\n#VeloCode #CulturaTech #CalidadSoftware #Escalabilidad",
+                slides: content.whyUs.map((w, i) => `
+                   <div class="post-service">
+                        <div class="service-header">
+                            <div class="service-label">Filosofía</div>
+                            <div class="service-title" style="font-size: 80px;">${w.title}</div>
+                        </div>
+                        
+                        <!-- Visual Element Area -->
+                        <div style="height: 150px; display: flex; align-items: center; justify-content: flex-start; margin: 30px 0;">
+                            ${w.visual ? w.visual : ''}
+                        </div>
+
+                        <div class="service-desc">${w.body}</div>
+                        <div class="footer-brand">
+                            <div class="footer-logo">velo code<span style="color:#22c55e">.</span></div>
+                        </div>
+                    </div>
+                `)
+            },
+            carousel_values: {
+                name: "Carousel: Valores",
+                type: 'carousel',
+                caption: "Nuestros Valores Fundamentales.\n\nInnovación, Calidad y Resultados. No son solo palabras, son los pilares de cada línea de código que escribimos.\n\n#VeloCode #Valores #TechEthics",
+                slides: content.values.map((v, i) => `
+                   <div class="post-welcome" style="align-items: flex-start; text-align: left; padding: 80px;">
+                        <div style="font-size: 30px; color: #94a3b8; letter-spacing: 4px; margin-bottom: auto;">VALORES</div>
+                        <div class="welcome-title" style="font-size: 110px;">${v.title.toUpperCase()}.</div>
+                        <div class="welcome-subtitle" style="color: #cbd5e1; max-width: 800px;">${v.body}</div>
+                        <div class="footer-brand" style="width: 100%;">
+                            <div class="footer-logo">velo code<span style="color:#22c55e">.</span></div>
+                        </div>
+                    </div>
+                `)
+            },
+            // --- MOCKUP SHOWCASES ---
+            mockup_web: {
+                name: "Showcase: Web Dashboard",
+                type: 'single',
+                caption: "Desarrollo de Paneles Administrativos y Dashboards.\n\nImplementamos interfaces de gestión de datos complejas con diseño limpio y funcional. Visualización de métricas en tiempo real, gestión de usuarios y control total de la operación.\n\nDiseño UI/UX orientado a la productividad y la claridad de la información.\n\n#VeloCode #Dashboard #UIUX #SaaS #AdminPanel",
+                html: `
+                <div class="post-service" style="padding: 0; align-items: center; justify-content: center; overflow: hidden; position: relative;">
+                    <div class="service-header" style="position: absolute; top: 80px; left: 80px; z-index: 20;">
+                        <div class="service-label">Web Development</div>
+                        <div class="service-title">Control<br>Total</div>
                     </div>
                     
-                    <div class="service-desc">
-                        Vende 24/7. Tiendas online optimizadas y catálogos digitales fáciles de gestionar.
+                    <!-- Dashboard Mockup scaled -->
+                    <div style="transform: scale(1.8); transform-origin: center; margin-top: 200px;">
+                        <div class="hero-desktop glass-panel" style="width: 600px; box-shadow: 0 50px 100px -20px rgba(0,0,0,0.5);">
+                            <div class="mockup-header">
+                                <div class="dots"><span></span><span></span><span></span></div>
+                                <div class="header-search"><ion-icon name="search-outline"></ion-icon><span>Buscar...</span></div>
+                                <div class="header-profile"></div>
+                            </div>
+                            <div class="mockup-body dashboard-body" style="background: #f8fafc;">
+                                <div class="sidebar-mock" style="width: 60px; border-right: 1px solid #e2e8f0; display: flex; flex-direction: column; align-items: center; padding-top: 15px; gap: 15px;">
+                                    <div class="sidebar-icon active"><ion-icon name="grid-outline"></ion-icon></div>
+                                    <div class="sidebar-icon"><ion-icon name="people-outline"></ion-icon></div>
+                                    <div class="sidebar-icon"><ion-icon name="cart-outline"></ion-icon></div>
+                                    <div class="sidebar-icon"><ion-icon name="settings-outline"></ion-icon></div>
+                                </div>
+                                <div class="content-mock" style="padding: 14px; display: flex; flex-direction: column; gap: 10px; flex: 1;">
+                                    <div style="display: flex; gap: 10px;">
+                                        <div class="hero-stat-card" style="padding: 8px;"><span class="label" style="font-size: 0.6rem;">Ingresos</span><span class="value" style="font-size: 0.95rem;">$12.4k</span></div>
+                                        <div class="hero-stat-card" style="padding: 8px;"><span class="label" style="font-size: 0.6rem;">Usuarios</span><span class="value" style="font-size: 0.95rem;">843</span></div>
+                                    </div>
+                                    <div class="hero-table-mock" style="padding: 10px;">
+                                        <div class="table-header" style="height: auto; padding-bottom: 5px; margin-bottom: 6px; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between;">
+                                            <span class="table-title" style="font-size: 0.7rem; font-weight: 600; color: #334155;">Pedidos Recientes</span>
+                                        </div>
+                                        <div class="table-row" style="padding: 6px 0;"><div class="t-col-avatar" style="width: 20px; height: 20px;"></div><div class="t-col-text" style="height: 6px;"></div><div class="t-col-badge success" style="font-size: 0.5rem; padding: 2px 6px;">Pagado</div></div>
+                                        <div class="table-row" style="padding: 6px 0;"><div class="t-col-avatar" style="width: 20px; height: 20px;"></div><div class="t-col-text" style="height: 6px;"></div><div class="t-col-badge pending" style="font-size: 0.5rem; padding: 2px 6px;">Pendiente</div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
-                     <div class="footer-brand" style="margin-top: auto;">
+                    <div class="footer-brand" style="position: absolute; bottom: 80px; right: 80px;">
                         <div class="footer-logo">velo code<span style="color:#22c55e">.</span></div>
                     </div>
-                </div>
-            `,
-            apps: `
-                <div class="post-service">
-                    <div class="service-header">
-                        <div class="service-label">Servicios</div>
-                        <div class="service-title">Proyectos<br>a Medida</div>
+                </div>`
+            },
+
+            mockup_app: {
+                name: "Showcase: Mobile App",
+                type: 'single',
+                caption: "Desarrollo de Aplicaciones Móviles Nativas.\n\nCreamos experiencias fluidas y rápidas para dispositivos móviles. Integración profunda con el sistema operativo, notificaciones push y rendimiento optimizado.\n\nDiseño de interfaz moderno que sigue los lineamientos de Apple y Google para asegurar la mejor experiencia de usuario.\n\n#VeloCode #AppDevelopment #iOS #Android #MobileUI",
+                html: `
+                <div class="post-service" style="padding: 0; align-items: center; justify-content: center; overflow: hidden; position: relative;">
+                    <div class="service-header" style="position: absolute; top: 80px; left: 80px; z-index: 20;">
+                        <div class="service-label">App Development</div>
+                        <div class="service-title">Experiencia<br>Nativa</div>
                     </div>
                     
-                    <div class="service-desc">
-                        ¿Tienes una idea única? Desarrollamos la solución tecnológica exacta que tu negocio necesita.
+                    <!-- iPhone Mockup scaled -->
+                    <div style="transform: scale(2.2); transform-origin: center; margin-top: 150px; margin-right: -100px;">
+                         <div class="hero-mobile mobile-frame" style="box-shadow: -20px 20px 60px rgba(0,0,0,0.4);">
+                            <div class="iphone-notch"></div>
+                            <div class="screen-content" style="background: #f8fafc; overflow: hidden; position: relative; display: flex; flex-direction: column; height: 100%;">
+                                <div style="padding: 8px 10px; background: white; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;">
+                                    <div style="font-weight: 700; color: #0f172a; font-size: 0.65rem;">Inventario</div>
+                                    <div style="width: 18px; height: 18px; background: #eff6ff; border-radius: 5px; display: flex; align-items: center; justify-content: center;"><ion-icon name="scan-outline" style="color: #3b82f6; font-size: 0.65rem;"></ion-icon></div>
+                                </div>
+                                <div style="padding: 8px 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; flex-shrink: 0;">
+                                    <div style="background: linear-gradient(135deg, #3b82f6, #2563eb); padding: 6px; border-radius: 6px; color: white;">
+                                        <div style="font-size: 0.38rem; opacity: 0.9; margin-bottom: 1px; font-weight: 500;">Total Items</div>
+                                        <div style="font-size: 0.85rem; font-weight: 800;">1,240</div>
+                                    </div>
+                                    <div style="background: white; padding: 6px; border-radius: 6px; border: 1px solid #e2e8f0;">
+                                        <div style="font-size: 0.38rem; color: #64748b; margin-bottom: 1px; font-weight: 500;">Valor Stock</div>
+                                        <div style="font-size: 0.85rem; font-weight: 800; color: #0f172a;">$45k</div>
+                                    </div>
+                                </div>
+                                <div style="padding: 0 10px 10px; display: flex; flex-direction: column; gap: 6px; flex: 1;">
+                                    <div style="flex: 1; background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px; display: flex; flex-direction: column;">
+                                        <div style="display: flex; align-items: flex-end; justify-content: space-between; flex: 1; gap: 3px; padding-bottom: 4px; border-bottom: 1px solid #f1f5f9;">
+                                            <div style="width: 8px; height: 40%; background: #e2e8f0; border-radius: 2px;"></div>
+                                            <div style="width: 8px; height: 65%; background: #e2e8f0; border-radius: 2px;"></div>
+                                            <div style="width: 8px; height: 85%; background: #3b82f6; border-radius: 2px;"></div>
+                                            <div style="width: 8px; height: 55%; background: #e2e8f0; border-radius: 2px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="home-indicator"></div>
+                            </div>
+                        </div>
                     </div>
-                    
-                     <div class="footer-brand" style="margin-top: auto;">
+
+                    <div class="footer-brand" style="position: absolute; bottom: 80px; left: 80px;">
                         <div class="footer-logo">velo code<span style="color:#22c55e">.</span></div>
                     </div>
-                </div>
-            `
+                </div>`
+            }
         };
 
-        function loadTemplate(type) {
-            const canvas = document.getElementById('asset-canvas');
-            canvas.innerHTML = templates[type] || templates.logo;
+        function initGallery() {
+            const gallery = document.getElementById('gallery');
+            gallery.innerHTML = '';
+
+            Object.keys(templates).forEach(key => {
+                const t = templates[key];
+
+                // Section Header
+                const section = document.createElement('div');
+                section.style.gridColumn = "1 / -1";
+                section.style.marginTop = "2rem";
+                section.style.marginBottom = "1rem";
+                section.style.display = "flex";
+                section.style.justifyContent = "space-between";
+                section.style.alignItems = "flex-end";
+                section.style.borderBottom = "1px solid #334155";
+                section.style.paddingBottom = "10px";
+
+                // Header + Caption for Carousels (Displayed once per row)
+                section.innerHTML = `
+                    <h2 style="color:white; margin:0;">${t.name}</h2>
+                `;
+
+                // If carousel, show caption in header area or separate box? 
+                // Let's create a dedicated "Caption Card" for carousels to make it very visible
+                gallery.appendChild(section);
+
+                if (t.type === 'single') {
+                    createCard(key, t.html, gallery, null, t.caption);
+                } else if (t.type === 'carousel') {
+                    const row = document.createElement('div');
+                    row.style.gridColumn = "1 / -1";
+                    row.style.display = "flex";
+                    row.style.gap = "20px";
+                    row.style.overflowX = "auto";
+                    row.style.paddingBottom = "20px";
+                    row.style.alignItems = "start";
+
+                    // 1. Add Caption Card first for Carousels
+                    if (t.caption) {
+                        const captionCard = document.createElement('div');
+                        captionCard.className = 'post-card';
+                        captionCard.style.minWidth = "300px";
+                        captionCard.style.maxWidth = "400px";
+                        captionCard.style.background = "#0f172a";
+                        captionCard.style.border = "1px dashed #334155";
+
+                        captionCard.innerHTML = `
+                            <div class="card-header" style="color:#22c55e;">📝 Caption del Set</div>
+                            <div style="padding: 1.5rem; color: #cbd5e1; white-space: pre-wrap; font-size: 0.9rem; flex:1;">${t.caption}</div>
+                            <div class="card-footer">
+                                <button class="btn-download" style="background: #334155;" onclick="copyCaption('${key}')">Copiar Texto</button>
+                            </div>
+                        `;
+                        row.appendChild(captionCard);
+                    }
+
+                    t.slides.forEach((html, index) => {
+                        const slideKey = `${key}_slide_${index}`;
+                        createCard(slideKey, html, row, `Slide ${index + 1}`, null); // Null caption for slides
+                    });
+                    gallery.appendChild(row);
+                }
+            });
+
+            setTimeout(resizeCanvases, 100);
+            window.addEventListener('resize', resizeCanvases);
         }
 
-        function changeBg(color) {
-            const canvas = document.getElementById('asset-canvas');
-            canvas.style.background = color;
+        function createCard(key, html, container, label, caption) {
+            const card = document.createElement('div');
+            card.className = 'post-card';
+            card.style.minWidth = "300px"; // Ensure width in scroll rows
+            if (label) card.innerHTML += `<div class="card-header" style="font-size: 0.8rem; color: #94a3b8;">${label}</div>`;
+            else if (caption) card.innerHTML += `<div class="card-header">${templates[key].name}</div>`; // Default header
+
+            card.innerHTML += `
+                <div class="canvas-wrapper">
+                    <div class="render-target" id="canvas-${key}">
+                        ${html}
+                    </div>
+                </div>
+            `;
+
+            // If it's a single post associated with a caption, show it below
+            if (caption) {
+                card.innerHTML += `
+                    <div style="padding: 1rem; border-top: 1px solid rgba(255,255,255,0.05); background: rgba(0,0,0,0.2);">
+                        <div style="font-size: 0.7rem; color: #64748b; margin-bottom: 5px; text-transform: uppercase; font-weight:700;">Instagram Caption</div>
+                        <div style="color: #cbd5e1; font-size: 0.85rem; white-space: pre-wrap; max-height: 100px; overflow-y: auto;" id="caption-${key}">${caption}</div>
+                    </div>
+                `;
+            }
+
+            // Buttons
+            let buttonsHtml = `
+                <button class="btn-download" onclick="downloadPost('${key}')">⬇️ PNG</button>
+            `;
+
+            if (caption) {
+                buttonsHtml += `<button class="btn-download" style="background: #334155; margin-left: 5px;" onclick="copyCaption('${key}')">📋 Text</button>`;
+            }
+
+            card.innerHTML += `<div class="card-footer">${buttonsHtml}</div>`;
+            container.appendChild(card);
         }
 
-        function downloadAsset() {
-            const element = document.getElementById('asset-canvas');
+        function copyCaption(key) {
+            // Handle both single (key) and carousel (key is passed directly from button) logic
+            let text = "";
+            if (templates[key] && templates[key].caption) {
+                text = templates[key].caption;
+            } else {
+                // Fallback if looking by element ID
+                const el = document.getElementById(`caption-${key}`);
+                if (el) text = el.innerText;
+            }
+
+            if (text) {
+                navigator.clipboard.writeText(text).then(() => {
+                    alert("Caption copiado al portapapeles!");
+                });
+            }
+        }
+
+        function resizeCanvases() {
+            const wrappers = document.querySelectorAll('.canvas-wrapper');
+            wrappers.forEach(wrapper => {
+                const width = wrapper.clientWidth;
+                const scale = width / 1080;
+                const target = wrapper.querySelector('.render-target');
+                target.style.transform = `scale(${scale})`;
+            });
+        }
+
+        function setGlobalBg(color) {
+            document.querySelectorAll('.render-target').forEach(el => {
+                el.style.background = color;
+            });
+            // Also update caption card bg for consistency if they were transparent, but they have fixed dark bg.
+        }
+
+        function downloadPost(key) {
+            const element = document.getElementById(`canvas-${key}`);
             const originalTransform = element.style.transform;
             element.style.transform = "none";
 
-            html2canvas(element, {
-                scale: 1,
-                backgroundColor: null,
-                logging: false,
-                useCORS: true
-            }).then(canvas => {
+            // Target 1920x1920
+            const targetSize = 1920;
+            const currentSize = 1080;
+            const scaleFactor = targetSize / currentSize; // ~1.7777
+
+            // Wait to ensure
+            html2canvas(element, { scale: scaleFactor, backgroundColor: null, logging: false, useCORS: true }).then(canvas => {
                 element.style.transform = originalTransform;
                 const link = document.createElement('a');
-                link.download = 'velo-post.png';
+                link.download = `velo-${key}-1920px.png`;
                 link.href = canvas.toDataURL('image/png');
                 link.click();
             });
         }
 
-        // Init
-        loadTemplate('logo');
+        // Run
+        initGallery();
+        setGlobalBg('#000');
     </script>
 </body>
 
