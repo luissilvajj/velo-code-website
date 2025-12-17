@@ -105,14 +105,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Get inputs
             const inputs = form.querySelectorAll('input, textarea, select');
-            let messageBody = "Hola Velo Code, me gustaría iniciar un proyecto:%0A";
 
-            // Build message
+            // Get Name explicitly if possible
+            const nameInput = form.querySelector('input[placeholder="Nombre"]');
+            const userName = nameInput ? nameInput.value : "";
+
+            let messageBody = `Hola Velo Code, me gustaría iniciar un proyecto. Mi nombre es ${userName}%0A`;
+
+            // Build message details
             inputs.forEach(input => {
-                if (input.value) {
+                const value = input.value;
+                if (value && input !== nameInput) {
                     // Check if it's the message area
                     const label = input.getAttribute('placeholder') || input.name || "Detalle";
-                    messageBody += `%0A*${label}:* ${input.value}`;
+                    messageBody += `%0A*${label}:* ${value}`;
                 }
             });
 
